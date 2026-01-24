@@ -652,6 +652,201 @@
       display:block;
       margin:10px auto;
     }
+    /* EMULATOR PAGE */
+    #emulator-page {
+      display:none;
+      position:fixed;
+      inset:0;
+      background:#000;
+      z-index:10000;
+      overflow:hidden;
+      font-family:'Cinzel',serif;
+      color:#fff;
+    }
+    #emulator-intro {
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      animation:emulatorFade 1.2s forwards 5.3s;
+      z-index:2;
+    }
+    #emulator-slideshow {
+      position:absolute;
+      inset:0;
+      background:#000;
+    }
+    #emulator-slideshow::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background-size:contain;
+      background-repeat:no-repeat;
+      background-position:center;
+      animation: flashEmulatorImages 5.3s steps(60) forwards;
+    }
+    @keyframes flashEmulatorImages {
+      0% {
+        background-image:url('https://imgpx.com/en/u1JpyaP6cuXy.png');
+      }
+      8% {
+        background-image:url('https://imgpx.com/en/VGmBaduHQrLi.png');
+      }
+      16% {
+        background-image:url('https://imgpx.com/en/z9g7ocw0tSHb.png');
+      }
+      24% {
+        background-image:url('https://imgpx.com/en/pGMOlGoXdWlg.png');
+      }
+      32% {
+        background-image:url('https://imgpx.com/en/qKhLJh9SnKxd.png');
+      }
+      40% {
+        background-image:url('https://imgpx.com/en/u1JpyaP6cuXy.png');
+      }
+      48% {
+        background-image:url('https://imgpx.com/en/VGmBaduHQrLi.png');
+      }
+      56% {
+        background-image:url('https://imgpx.com/en/z9g7ocw0tSHb.png');
+      }
+      64% {
+        background-image:url('https://imgpx.com/en/pGMOlGoXdWlg.png');
+      }
+      72% {
+        background-image:url('https://imgpx.com/en/qKhLJh9SnKxd.png');
+      }
+      80% {
+        background-image:url('https://imgpx.com/en/u1JpyaP6cuXy.png');
+      }
+      88% {
+        background-image:url('https://imgpx.com/en/VGmBaduHQrLi.png');
+      }
+      96% {
+        background-image:url('https://imgpx.com/en/z9g7ocw0tSHb.png');
+      }
+      100% {
+        background-image:url('https://imgpx.com/en/qKhLJh9SnKxd.png');
+      }
+    }
+    @keyframes emulatorFade {
+      to {
+        opacity:0;
+        visibility:hidden
+      }
+    }
+    #emulator-text {
+      font-size:9vw;
+      font-weight:900;
+      background:linear-gradient(45deg,#ff00ff,#00ffff,#ffff00,#ff0066,#00ff00);
+      -webkit-background-clip:text;
+      color:transparent;
+      text-shadow:0 0 50px #fff;
+      animation:rainbow 7s infinite;
+      letter-spacing:0.2em;
+      z-index:3;
+    }
+    #emulator-bottom {
+      position:absolute;
+      bottom:10vh;
+      font-size:3.5vw;
+      text-shadow:0 0 30px #0ff,0 0 60px #f0f;
+      animation:pulse 1.8s infinite;
+      z-index:3;
+    }
+    #emulator-main {
+      opacity:0;
+      animation:emulatorAppear 1.5s forwards 5.3s;
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+    }
+    .emulator-strobe {
+      position:absolute;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      filter:blur(120px);
+      opacity:0;
+      animation:moveEmulatorStrobe 12s infinite ease-in-out;
+    }
+    #es1 {
+      background:#ff00ff;
+      animation-delay:0s;
+    }
+    #es2 {
+      background:#00ffff;
+      animation-delay:3s;
+    }
+    #es3 {
+      background:#ffff00;
+      animation-delay:6s;
+    }
+    #es4 {
+      background:#ff0066;
+      animation-delay:9s;
+    }
+    @keyframes moveEmulatorStrobe {
+      0% {
+        transform:translate(-70vw,-70vh) scale(0.4);
+        opacity:0;
+      }
+      25% {
+        opacity:0.9;
+      }
+      50% {
+        transform:translate(70vw,70vh) scale(2.2);
+        opacity:0.7;
+      }
+      75% {
+        opacity:0.9;
+      }
+      100% {
+        transform:translate(-70vw,-70vh) scale(0.4);
+        opacity:0;
+      }
+    }
+    #emulator-frosted {
+      position:absolute;
+      inset:0;
+      backdrop-filter:blur(14px) brightness(1.5);
+      background:rgba(255,255,255,0.06);
+      pointer-events:none;
+    }
+    #emulator-h1 {
+      font-size:8vw;
+      font-weight:900;
+      background:linear-gradient(45deg,#00ffff,#ff00ff,#ffff00);
+      -webkit-background-clip:text;
+      color:transparent;
+      text-shadow:0 0 80px #fff;
+      animation:rainbow 6s infinite;
+      margin-bottom:60px;
+      z-index:2;
+    }
+    .emulator-btn {
+      padding:20px 80px;
+      font-size:2.5em;
+      font-weight:bold;
+      background:linear-gradient(135deg,#ff00ff,#00ffff);
+      color:#000;
+      border:none;
+      border-radius:60px;
+      cursor:pointer;
+      box-shadow:0 0 60px #0ff;
+      transition:.4s;
+      z-index:2;
+    }
+    .emulator-btn:hover {
+      transform:scale(1.3);
+      box-shadow:0 0 120px #f0f;
+      background:linear-gradient(135deg,#ffff00,#ff00ff);
+    }
     /* DRAG RACER PAGE */
     #drag-racer-page {
       display:none;
@@ -1097,34 +1292,49 @@
           <div class="tg" style="background:#00ff99;color:#000;">MOV</div>
         </div>
       </div>
+      <div class="c">
+        <div class="tb" style="background:linear-gradient(135deg,#000000,#ff00ff);color:#fff;text-shadow:0 0 20px #f0f;">EMULATOR</div>
+        <div class="in">
+          <h2 class="tt">Emulator</h2>
+          <p class="dc">Play classic games in your browser. PlayStation, Nintendo, Sega, and more! [EMU]</p>
+          <button onclick="showEmulator()" class="bt">ENTER EMULATOR</button>
+          <div class="tg" style="background:#ff00ff;color:#000;">EMU</div>
+        </div>
+      </div>
       <div class="c"><div class="tb">Slope Ball</div><div class="in"><h2 class="tt">Retard Slope</h2><p class="dc">Kinda like normal slope but with down syndrome! [OK]</p><button onclick="oF('https://mathiasgredal.github.io/Slope-Game/')" class="bt">GO FS TWIN</button><div class="tg">3D</div></div></div>
       <div class="c"><div class="tb">Slope Nexus</div><div class="in"><h2 class="tt">Normal Slope</h2><p class="dc">Actual Slope but WASD don't work dunno why not gonna fix ts! [OK]</p><button onclick="oF('https://slopenexus.github.io/games/v7/index.html')" class="bt">GO FS TWIN</button><div class="tg">3D</div></div></div>
       <div class="c"><div class="tb">Endless Runner</div><div class="in"><h2 class="tt">Rage Runna</h2><p class="dc">This game pisses me off lwk but is addicting! [OK]</p><button onclick="oF('https://nickidebruyn.github.io/unity/endlessrunner/index.html')" class="bt">GO FS TWIN</button><div class="tg">RUN</div></div></div>
-      <div class="c"><div class="tb">Retro Bowl</div><div class="in"><h2 class="tt">Retro Bowl</h2><p class="dc">Football manager sim — build team, win bowls, straight NFL vibes in pixels! [OK]</p><button onclick="showSkibidi()" class="bt">GO FS TWIN</button><div class="tg">SPO</div></div></div>
-      <div class="c"><div class="tb">Drag Racer</div><div class="in"><h2 class="tt">Drag Racer V3</h2><p class="dc">Buy cars, mod em, drag race for pink slips. Classic Flash goat — tune gears, nitro, win stacks! [OK]</p><button onclick="showDragRacer()" class="bt">GO FS TWIN</button><div class="tg">RAC</div></div></div>
-      <div class="c"><div class="tb">Subway Surfers</div><div class="in"><h2 class="tt">Subway Surfers</h2><p class="dc">Endless runner — dodge trains, grind rails, collect coins. Hoverboard boosts, global cities! [OK]</p><button onclick="oF('https://subwaysurf.io/')" class="bt">GO FS TWIN</button><div class="tg">RUN</div></div></div>
-      <div class="c"><div class="tb">BitLife</div><div class="in"><h2 class="tt">BitLife</h2><p class="dc">Life sim — birth to death choices. Career, relationships, crime, straight chaotic vibes! [OK]</p><button onclick="oF('https://bitlifeonline.io/')" class="bt">GO FS TWIN</button><div class="tg">SIM</div></div></div>
-      <div class="c"><div class="tb">Cookie Clicker</div><div class="in"><h2 class="tt">Cookie Clicker</h2><p class="dc">Idle clicker — bake cookies, buy upgrades, grandmas, farms. Infinite sugar rush! [OK]</p><button onclick="oF('https://orteil.dashnet.org/cookieclicker/')" class="bt">GO FS TWIN</button><div class="tg">IDL</div></div></div>
-      <div class="c"><div class="tb">2048</div><div class="in"><h2 class="tt">2048</h2><p class="dc">Slide tiles, merge numbers, hit 2048. Addicting puzzle — one wrong move, game over! [OK]</p><button onclick="oF('https://play2048.co/')" class="bt">GO FS TWIN</button><div class="tg">PUZ</div></div></div>
-      <div class="c"><div class="tb">Flappy Bird</div><div class="in"><h2 class="tt">Flappy Bird</h2><p class="dc">Tap to fly, dodge pipes, high scores. Rage quit classic — one hit, dead! [OK]</p><button onclick="oF('https://flappybird.io/')" class="bt">GO FS TWIN</button><div class="tg">ARC</div></div></div>
-      <div class="c"><div class="tb">Tetris</div><div class="in"><h2 class="tt">Tetris</h2><p class="dc">Stack blocks, clear lines, level up. OG puzzle — rotate, drop, tetris! [OK]</p><button onclick="oF('https://tetris.com/play-tetris')" class="bt">GO FS TWIN</button><div class="tg">PUZ</div></div></div>
-      <div class="c"><div class="tb">Pac-Man</div><div class="in"><h2 class="tt">Pac-Man</h2><p class="dc">Maze chaser — eat dots, avoid ghosts, power pellets. Arcade legend! [OK]</p><button onclick="oF('https://pacman.com/en/')" class="bt">GO FS TWIN</button><div class="tg">ARC</div></div></div>
-      <div class="c"><div class="tb">Snake</div><div class="in"><h2 class="tt">Snake</h2><p class="dc">Grow snake, eat apples, don't crash. Classic Nokia vibes — high score chase! [OK]</p><button onclick="oF('https://playsnake.org/')" class="bt">GO FS TWIN</button><div class="tg">ARC</div></div></div>
-      <div class="c"><div class="tb">Doodle Jump</div><div class="in"><h2 class="tt">Doodle Jump</h2><p class="dc">Bounce up, avoid monsters, jetpacks. Endless jumper — high score madness! [OK]</p><button onclick="oF('https://doodlejump.io/')" class="bt">GO FS TWIN</button><div class="tg">ARC</div></div></div>
-      <div class="c"><div class="tb">Temple Run</div><div class="in"><h2 class="tt">Temple Run</h2><p class="dc">Endless runner — dodge obstacles, collect coins, monkey chase. Swipe to survive! [OK]</p><button onclick="oF('https://templerun.io/')" class="bt">GO FS TWIN</button><div class="tg">RUN</div></div></div>
-      <div class="c"><div class="tb">Fruit Ninja</div><div class="in"><h2 class="tt">Fruit Ninja</h2><p class="dc">Slice fruits, avoid bombs, combos. Juicy arcade — high score slicer! [OK]</p><button onclick="oF('https://fruitninja.com/')" class="bt">GO FS TWIN</button><div class="tg">ARC</div></div></div>
-      <div class="c"><div class="tb">Angry Birds</div><div class="in"><h2 class="tt">Angry Birds</h2><p class="dc">Sling birds, smash pigs, levels. Physics puzzle — bird revenge! [OK]</p><button onclick="oF('https://angrybirds.com/games/angry-birds-classic/')" class="bt">GO FS TWIN</button><div class="tg">PUZ</div></div></div>
-      <div class="c"><div class="tb">Plants vs Zombies</div><div class="in"><h2 class="tt">Plants vs Zombies</h2><p class="dc">Tower defense — plant shooters, stop zombies. Levels, upgrades, lawn warfare! [OK]</p><button onclick="oF('https://poki.com/en/g/plants-vs-zombies')" class="bt">GO FS TWIN</button><div class="tg">TD</div></div></div>
-      <div class="c"><div class="tb">Cut the Rope</div><div class="in"><h2 class="tt">Cut the Rope</h2><p class="dc">Physics puzzle — cut ropes, feed candy to Om Nom. Stars, levels, cute vibes! [OK]</p><button onclick="oF('https://cuttherope.net/')" class="bt">GO FS TWIN</button><div class="tg">PUZ</div></div></div>
-      <div class="c"><div class="tb">Jetpack Joyride</div><div class="in"><h2 class="tt">Jetpack Joyride</h2><p class="dc">Endless side-scroller — jetpack, dodge lasers, collect coins. Gadgets, high scores! [OK]</p><button onclick="oF('https://jetpackjoyride.com/')" class="bt">GO FS TWIN</button><div class="tg">ARC</div></div></div>
-      <div class="c"><div class="tb">Crossy Road</div><div class="in"><h2 class="tt">Crossy Road</h2><p class="dc">Endless hopper — cross roads, avoid cars, trains. Collect characters, high scores! [OK]</p><button onclick="oF('https://crossyroad.com/')" class="bt">GO FS TWIN</button><div class="tg">ARC</div></div></div>
-      <div class="c"><div class="tb">Hill Climb Racing</div><div class="in"><h2 class="tt">Hill Climb Racing</h2><p class="dc">Physics racer — climb hills, collect coins, upgrades. Vehicles, levels, flips! [OK]</p><button onclick="oF('https://hillclimbracing.com/')" class="bt">GO FS TWIN</button><div class="tg">RAC</div></div></div>
-      <div class="c"><div class="tb">Clash of Clans</div><div class="in"><h2 class="tt">Clash of Clans</h2><p class="dc">Strategy builder — build village, train troops, raid. Clans, wars, upgrades! [OK]</p><button onclick="oF('https://clashofclans.com/')" class="bt">GO FS TWIN</button><div class="tg">STR</div></div></div>
-      <div class="c"><div class="tb">Candy Crush</div><div class="in"><h2 class="tt">Candy Crush</h2><p class="dc">Match-3 puzzle — swap candies, clear levels, boosters. Sweet addiction! [OK]</p><button onclick="oF('https://candycrushsaga.com/')" class="bt">GO FS TWIN</button><div class="tg">PUZ</div></div></div>
-      <div class="c"><div class="tb">Among Us</div><div class="in"><h2 class="tt">Among Us</h2><p class="dc">Social deduction — crewmates vs impostors, tasks, sus meetings. Multiplayer chaos! [OK]</p><button onclick="oF('https://amongus.io/')" class="bt">GO FS TWIN</button><div class="tg">MUL</div></div></div>
-      <div class="c"><div class="tb">Roblox</div><div class="in"><h2 class="tt">Roblox</h2><p class="dc">User-generated worlds — play, create, socialize. Infinite games, avatars, robux! [OK]</p><button onclick="oF('https://now.gg/play/roblox-corporation/5349/roblox')" class="bt">GO FS TWIN</button><div class="tg">MUL</div></div></div>
-      <div class="c"><div class="tb">Fortnite</div><div class="in"><h2 class="tt">Fortnite</h2><p class="dc">Battle royale — build, shoot, last standing. Seasons, emotes, cross-play! [OK]</p><button onclick="oF('https://now.gg/play/epic-games/1234/fortnite')" class="bt">GO FS TWIN</button><div class="tg">BR</div></div></div>
-      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#000,#ff0,#0f0);color:#fff;text-shadow:0 0 30px #000;">Geometry Dash</div><div class="in"><h2 class="tt">Geometry Dash</h2><p class="dc">Goat rhythm platformer — jump, fly, die, repeat. 21 levels, coins, icons, straight fire [OK]</p><button onclick="oF('https://unblocked-games.s3.amazonaws.com/g177/class-346/')" class="bt">GO FS TWIN</button><div class="tg" style="background:#000;color:#0f0;border:5px solid #ff0;font-weight:bold;letter-spacing:4px;">GD</div></div></div>
+      <div class="c"><div class="tb">Rocket Game</div><div class="in"><h2 class="tt">Fuckass Rocket</h2><p class="dc">Fly the rocket, left/right turn, space to thrust. 10 levels of this shit game! [OK]</p><button onclick="oF('https://lance60.github.io/RocketGameWebGL/')" class="bt">GO FS TWIN</button><div class="tg">ARC</div></div></div>
+      <div class="c"><div class="tb">Box Shooter</div><div class="in"><h2 class="tt">Box Shooter</h2><p class="dc">goon practice. Shoot boxes, rack score. js don't play ts ASS [OK]</p><button onclick="oF('https://romxz.github.io/Unity3D_BoxShooter_WebGL/')" class="bt">GO FS TWIN</button><div class="tg">FPS</div></div></div>
+      <div class="c"><div class="tb">Ghost Game</div><div class="in"><h2 class="tt">Untitled Ghost Game</h2><p class="dc">3D ghost freaky exploration. [OK]</p><button onclick="oF('http://mgoadric.github.io/UGG/index.html')" class="bt">GO FS TWIN</button><div class="tg">HOR</div></div></div>
+      <div class="c"><div class="tb">Cave Explorer</div><div class="in"><h2 class="tt">Cave Game</h2><p class="dc">Explore caves, wait pause... [OK]</p><button onclick="oF('https://lukewarm124.github.io/')" class="bt">GO FS TWIN</button><div class="tg">ADV</div></div></div>
+      <div class="c"><div class="tb">Titan Punk</div><div class="in"><h2 class="tt">Titan Punk</h2><p class="dc">Third-person 3D demo. [OK]</p><button onclick="oF('https://slimramgames.github.io/Titan/')" class="bt">GO FS TWIN</button><div class="tg">DEM</div></div></div>
+      <div class="c"><div class="tb">Mini Game</div><div class="in"><h2 class="tt">Mini Game Collection</h2><p class="dc">Many unc ass games. [OK]</p><button onclick="oF('https://curtinhive.github.io/BPSGame/')" class="bt">GO FS TWIN</button><div class="tg">SIM</div></div></div>
+      <div class="c"><div class="tb">Game Of Life</div><div class="in"><h2 class="tt">Game Of Life</h2><p class="dc">Cellular automaton simulation. (I got no clue what ts is) [OK]</p><button onclick="oF('https://sarkarsaurabh.github.io/')" class="bt">GO FS TWIN</button><div class="tg">SIM</div></div></div>
+      <div class="c"><div class="tb">Ultrakill</div><div class="in"><h2 class="tt">Ultrakill Demo</h2><p class="dc">Best Indie Game EVA ts so damn peak make me wanna BUST. [OK]</p><button onclick="oF('https://149004934-bit.github.io/BarfbagX2UltrakillGame.github.io/')" class="bt">GO FS TWIN</button><div class="tg">FPS</div></div></div>
+      <div class="c"><div class="tb">Random BS of a game lwk</div><div class="in"><h2 class="tt">don't even click ts gng</h2><p class="dc">nah vro don't even read ts either. [OK]</p><button onclick="oF('https://ludumdareosd.github.io/ld46/index.html')" class="bt">GO FS TWIN</button><div class="tg">JAM</div></div></div>
+      <div class="c"><div class="tb">2048 Puzzle</div><div class="in"><h2 class="tt">2048 Puzzle</h2><p class="dc">fuckass number puzzle. [OK]</p><button onclick="oF('https://czhenya.github.io/2048.github.io/')" class="bt">GO FS TWIN</button><div class="tg">PUZ</div></div></div>
+      <div class="c"><div class="tb">Kopter</div><div class="in"><h2 class="tt">Kopter</h2><p class="dc">24h copter challenge. Navigate physics-Accurate helicopter- big ahh map of random shi! [OK]</p><button onclick="oF('https://thomaschampagne.github.io/kopter/')" class="bt">GO FS TWIN</button><div class="tg">ARC</div></div></div>
+      <div class="c"><div class="tb">Mario Bros</div><div class="in"><h2 class="tt">Super Mario Bros</h2><p class="dc">you alr know what ts is gng. you better... [OK]</p><button onclick="oF('https://winstonshields.github.io/Games/Mario/index.html')" class="bt">GO FS TWIN</button><div class="tg">PLAT</div></div></div>
+      <div class="c"><div class="tb">Flip Exchange</div><div class="in"><h2 class="tt">Flip Exchange</h2><p class="dc">2D sidescroller. Switch worlds, with dual characters, solve puzzles! [OK]</p><button onclick="oF('http://flipexchange.github.io/')" class="bt">GO FS TWIN</button><div class="tg">PUZ</div></div></div>
+      <div class="c"><div class="tb">Solar Sim</div><div class="in"><h2 class="tt">Solar System Simulation</h2><p class="dc">why would we willingly play this gng? is everything ok??? [OK]</p><button onclick="oF('http://q-ro.github.io/Solar-system-unity/')" class="bt">GO FS TWIN</button><div class="tg">SIM</div></div></div>
+      <div class="c"><div class="tb">Horror 3D</div><div class="in"><h2 class="tt">3D Horror Game</h2><p class="dc">Run from Slenderman before he GROOMS YO AHH! [OK]</p><button onclick="oF('https://adazhou2007.github.io/3D-horror-web-version/')" class="bt">GO FS TWIN</button><div class="tg">HOR</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#8B00FF,#FF00FF);color:#fff;text-shadow:0 0 20px #000;">Subway Surfers</div><div class="in"><h2 class="tt">Subway Surfers V1</h2><p class="dc">ts the real game gng not sum rip off bs. [OK]</p><button onclick="oF('https://gertdoro.github.io/3hg7dj3bnc82/index.html')" class="bt">GO FS TWIN</button><div class="tg" style="background:#FF00FF;color:#fff;">IONKNO</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#0066ff,#00ff99);color:#fff;text-shadow:0 0 20px #000;">Run 3</div><div class="in"><h2 class="tt">Run 3 Unblocked</h2><p class="dc">Infinite runner in space. Don't fall off or it's over gng. [OK]</p><button onclick="oF('https://linh879.github.io/run333/tn6pS9dCf37xAhkJv/')" class="bt">GO FS TWIN</button><div class="tg" style="background:#0066ff;color:#fff;">HDR</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#ff0066,#8B00FF);color:#fff;text-shadow:0 0 20px #000;">Drift Boss</div><div class="in"><h2 class="tt">Drift Boss</h2><p class="dc">ts game pmo lwk. [OK]</p><button onclick="oF('https://centeredu20.github.io/g5/class-472')" class="bt">GO FS TWIN</button><div class="tg" style="background:#ff0066;color:#fff;">BALLZ</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#000000,#ff00ff);color:#fff;text-shadow:0 0 20px #f0f;">Chaos Proxy V8</div><div class="in"><h2 class="tt">Chaos Proxy V8</h2><p class="dc">Google gapi.rpc abuse. Clears cookies. Bypasses everything. need I say more? [TS]</p><button onclick="oF('https://script.google.com/macros/s/AKfycbx8Qd2x8e8i8e8i8e8i8e8i8e8i8e8i8e8i8e8/exec')" class="bt">RUN SCRIPT</button><div class="tg" style="background:#ff00ff;color:#000;">GREEN FN</div></div></div>
+      <div class="c"><div class="tb">Drag Racer</div><div class="in"><h2 class="tt">Drag Racer V3</h2><p class="dc">ion know what Ts is, was a request so ask Habibi [OK]</p><button onclick="showDragRacer()" class="bt">GO FS TWIN</button><div class="tg">RACE</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#ff00ff,#320d90);color:#fff;text-shadow:0 0 20px #000;">RETRO BOWL</div><div class="in"><h2 class="tt">Retro Bowl</h2><p class="dc">you alr know what ts is gng. [FEET]</p><button onclick="showSkibidi()" class="bt">GO FS TWIN</button><div class="tg" style="background:#320d90;color:#fff;">FUTA</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#ff0000,#000000);color:#fff;text-shadow:0 0 20px #fff;">NZP</div><div class="in"><h2 class="tt">Nazi Zombies Portable</h2><p class="dc">Call of Duty Zombies but on PSP and now in browser. Peak zombie slaying gng [WAW]</p><button onclick="oF('https://someonecantcode.github.io/nzp/')" class="bt">GO FS TWIN</button><div class="tg" style="background:#ff0000;color:#fff;">NPZ</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#0f0,#000);color:#fff;text-shadow:0 0 20px #0f0;">BLACK OPS ZOMBIES</div><div class="in"><h2 class="tt">Black Ops 1 Zombies</h2><p class="dc">Kino, Five, Ascension, Shangri-La, Moon — all the classics in browser gng. Pack-a-Punch goated [BO1]</p><button onclick="oF('https://someonecantcode.github.io/bo1zombies/')" class="bt">GO FS TWIN</button><div class="tg" style="background:#0f0;color:#000;">BO1</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#ff00ff,#8B00FF,#00ffff);color:#fff;text-shadow:0 0 25px #000;">FNAF</div><div class="in"><h2 class="tt">FNAF</h2><p class="dc">is the fnaf2 movie finna be peak? [TS]</p><button onclick="oF('https://centeredu20.github.io/g97/class-470')" class="bt">GO FS TWIN</button><div class="tg" style="background:#ff00ff;color:#fff;border:2px solid #0ff;">FNAF</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#ff0000,#ffff00,#ff0000);color:#000;text-shadow:0 0 30px #fff;animation:pulse 2s infinite;">WORLD'S HARDEST GAME</div><div class="in"><h2 class="tt">The World's Hardest Game</h2><p class="dc">Red square. Blue dots. not that hard gng light work [OK]</p><button onclick="oF('https://raw.githack.com/GoingKeto/twhg/main/index.html')" class="bt">I AM NOT SCARED</button><div class="tg" style="background:#ff0000;color:#fff;border:3px solid #ffff00;font-weight:bold;">OG</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#ff8c00,#b8860b,#ffd700);color:#000;text-shadow:0 0 30px #fff;">TEMPLE RUN 2</div><div class="in"><h2 class="tt">Temple Run 2</h2><p class="dc">Run for your life from the monkey. Pigmentation might wanna be checked gng [OK]</p><button onclick="oF('https://raw.githack.com/GoingKeto/templerun2/main/index.html')" class="bt">GOFS TWIN</button><div class="tg" style="background:#ffd700;color:#000;border:3px solid #ff4500;font-weight:bold;">MBLE</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#00ff00,#006400,#00ff00);color:#000;text-shadow:0 0 35px #00ff00;animation:pulse 2s infinite;">FRUIT NINJA</div><div class="in"><h2 class="tt">Fruit Ninja</h2><p class="dc">like to see y'all mfs beat my score of 220k [OK]</p><button onclick="oF('https://bitstore1612.github.io/g50/class-22/')" class="bt">GO FS TWIN</button><div class="tg" style="background:#006400;color:#fff;border:4px solid #00ff00;font-weight:bold;">GreenFN</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#ff0044,#ffaa00,#ffff00);color:#000;text-shadow:0 0 40px #fff;animation:rainbow 3s infinite;">Paper.io 2</div><div class="in"><h2 class="tt">Paper io 2</h2><p class="dc">do I need to explain ts gng [OK]</p><button onclick="oF('https://bitstore1612.github.io/g/class-505/')" class="bt">GO FS TWIN</button><div class="tg" style="background:#ff0044;color:#fff;border:4px solid #ffff00;font-weight:bold;">IO</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#ff00ff,#8B00FF,#00ffff,#ff00ff);color:#fff;text-shadow:0 0 40px #000;animation:hue 6s infinite;">CROSSY ROAD</div><div class="in"><h2 class="tt">Crossy Road</h2><p class="dc">idk ts ain't sum rip off version we got the real shi here [OK]</p><button onclick="oF('https://centeredu20.github.io/g20/class-402')" class="bt">GO FS TWIN</button><div class="tg" style="background:#ff00ff;color:#fff;border:5px double #00ffff;font-weight:bold;letter-spacing:3px;">TS</div></div></div>
+      <div class="c"><div class="tb" style="background:linear-gradient(135deg,#00ffff,#ff00ff,#ffff00,#00ffff);color:#000;text-shadow:0 0 50px #fff;animation:rainbow 5s infinite;">GEOMETRY DASH</div><div class="in"><h2 class="tt">Geometry Dash Full Version</h2><p class="dc">All 21 official levels, icons, practice mode, level editor, custom songs, 60fps in browser gng [OK]</p><button onclick="oF('https://bitstore1612.github.io/g177/class-346/')" class="bt">GO FS TWIN</button><div class="tg" style="background:#000;color:#0f0;border:5px solid #ff0;font-weight:bold;letter-spacing:4px;">GD</div></div></div>
+      <!-- AaronOS -->
       <div class="c">
         <div class="tb" style="background:linear-gradient(135deg,#8B00FF,#00ff00,#00ffff);color:#fff;text-shadow:0 0 30px #000;">AaronOS</div>
         <div class="in">
@@ -1134,20 +1344,122 @@
           <div class="tg" style="background:#00ffff;color:#000;font-weight:bold;">OS</div>
         </div>
       </div>
+      <!-- Funny Shooter Bro -->
       <div class="c">
         <div class="tb" style="background:linear-gradient(135deg,#ff0000,#ff00ff);color:#fff;text-shadow:0 0 30px #000;">Funny Shooter Bro</div>
         <div class="in">
           <h2 class="tt">Funny Shooter Bro</h2>
-          <p class="dc">Blast waves of goofy red dudes with sticks across 10 levels. Headshots go crazy, weapon shop goated — FreezeNova peak [OK]</p>
-          <button onclick="oF('https://unblocked-games.s3.amazonaws.com/funny-shooter-bro.html')" class="bt">GO FS TWIN</button>
+          <p class="dc">not a clue on how to explain this game but its lwk fun [OK]</p>
+          <button onclick="oF('https://barfbagx2.github.io/barfbagx2sfunnyshooter2.github.io/')" class="bt">GO FS TWIN</button>
           <div class="tg" style="background:#ff00ff;color:#000;font-weight:bold;">FPS</div>
         </div>
       </div>
+      <!-- Grow a Garden -->
+      <div class="c">
+        <div class="tb" style="background:linear-gradient(135deg,#00ff00,#ffff00);color:#000;text-shadow:0 0 30px #fff;">Grow a Garden</div>
+        <div class="in">
+          <h2 class="tt">Grow a Garden</h2>
+          <p class="dc">its exactly what you think it is... [OK]</p>
+          <button onclick="oF('https://barfbagx2.github.io/barfbagx2sgrowagarden.github.io/')" class="bt">GO FS TWIN</button>
+          <div class="tg" style="background:#ffff00;color:#000;font-weight:bold;">FARM</div>
+        </div>
+      </div>
+      <!-- Contra 3 -->
+      <div class="c">
+        <div class="tb" style="background:linear-gradient(135deg,#ff0000,#0000ff);color:#fff;text-shadow:0 0 30px #fff;">Contra 3</div>
+        <div class="in">
+          <h2 class="tt">Contra 3</h2>
+          <p class="dc">best nes game oat idc what you say [OK]</p>
+          <button onclick="oF('https://barfbagx2.github.io/barfbagx2scontra3.github.io/')" class="bt">GO FS TWIN</button>
+          <div class="tg" style="background:#0000ff;color:#fff;font-weight:bold;">RUN</div>
+        </div>
+      </div>
+      <!-- Clash Royale -->
+      <div class="c">
+        <div class="tb" style="background:linear-gradient(135deg,#ff0000,#ffff00);color:#000;text-shadow:0 0 30px #fff;">Clash Royale</div>
+        <div class="in">
+          <h2 class="tt">Clash Royale</h2>
+          <p class="dc">close enough ig [OK]</p>
+          <button onclick="oF('https://barfbagx2.github.io/barfbagx2sclashroyale.github.io/')" class="bt">GO FS TWIN</button>
+          <div class="tg" style="background:#ffff00;color:#000;font-weight:bold;">STR</div>
+        </div>
+      </div>
+      <!-- Karlson Demo -->
+      <div class="c">
+        <div class="tb" style="background:linear-gradient(135deg,#000000,#ffffff);color:#fff;text-shadow:0 0 30px #fff;">Karlson Demo</div>
+        <div class="in">
+          <h2 class="tt">Karlson Demo</h2>
+          <p class="dc">we ALL got this wishlisted on steam yo [OK]</p>
+          <button onclick="oF('https://barfbagx2.github.io/barfbagx2skarlsondemo.github.io/')" class="bt">GO FS TWIN</button>
+          <div class="tg" style="background:#ffffff;color:#000;font-weight:bold;">ADV</div>
+        </div>
+      </div>
+      <!-- Steal a Brain Rot 2 -->
+      <div class="c">
+        <div class="tb" style="background:linear-gradient(135deg,#0000ff,#ff00ff);color:#fff;text-shadow:0 0 30px #fff;">Steal a Brain Rot 2</div>
+        <div class="in">
+          <h2 class="tt">Steal a Brain Rot 2</h2>
+          <p class="dc">son im crine, why we playin this [OK]</p>
+          <button onclick="oF('https://149004934-bit.github.io/barfbagx2sstealabrainrot2.github.io/')" class="bt">GO FS TWIN</button>
+          <div class="tg" style="background:#ff00ff;color:#fff;font-weight:bold;">HOR</div>
+        </div>
+      </div>
+      <!-- Super Hot -->
+      <div class="c">
+        <div class="tb" style="background:linear-gradient(135deg,#ff0000,#ffff00);color:#000;text-shadow:0 0 30px #fff;">Super Hot</div>
+        <div class="in">
+          <h2 class="tt">Super Hot</h2>
+          <p class="dc">its "that" vr game, we all js forgot the game lwk [OK]</p>
+          <button onclick="oF('https://149004934-bit.github.io/barfbagx2ssuperhot.github.io/')" class="bt">GO FS TWIN</button>
+          <div class="tg" style="background:#ffff00;color:#000;font-weight:bold;">RAC</div>
+        </div>
+      </div>
+      <!-- 1v1 LOL -->
+      <div class="c">
+        <div class="tb" style="background:linear-gradient(135deg,#0000ff,#00ffff);color:#fff;text-shadow:0 0 30px #fff;">1v1 LOL</div>
+        <div class="in">
+          <h2 class="tt">1v1 LOL</h2>
+          <p class="dc">may or may not be getting lazy with these titles [OK]</p>
+          <button onclick="oF('https://149004934-bit.github.io/barfbagx2s1v1lol.github.com/')" class="bt">GO FS TWIN</button>
+          <div class="tg" style="background:#00ffff;color:#000;font-weight:bold;">FPS</div>
+        </div>
+      </div>
+      <!-- Dokidoki Literature Club -->
+      <div class="c">
+        <div class="tb" style="background:linear-gradient(135deg,#ff00ff,#ffffff);color:#000;text-shadow:0 0 30px #fff;">Dokidoki Literature Club</div>
+        <div class="in">
+          <h2 class="tt">Dokidoki Literature Club</h2>
+          <p class="dc">yes twin this is the heat in question twin [OK]</p>
+          <button onclick="oF('https://149004934-bit.github.io/barfbagx2sdokidokilitclub.github.io/')" class="bt">GO FS TWIN</button>
+          <div class="tg" style="background:#ffffff;color:#000;font-weight:bold;">ADV</div>
+        </div>
+      </div>
+      <!-- Quake 3 Arena -->
+      <div class="c">
+        <div class="tb" style="background:linear-gradient(135deg,#000000,#ff0000);color:#fff;text-shadow:0 0 30px #fff;">Quake 3 Arena</div>
+        <div class="in">
+          <h2 class="tt">Quake 3 Arena</h2>
+          <p class="dc">ts kinda tuff gng idk if multiplayer works [OK]</p>
+          <button onclick="oF('https://149004934-bit.github.io/barfbagx2squake3arena.github.io/')" class="bt">GO FS TWIN</button>
+          <div class="tg" style="background:#ff0000;color:#fff;font-weight:bold;">FPS</div>
+        </div>
+      </div>
+      <!-- Basket Random -->
+      <div class="c">
+        <div class="tb" style="background:linear-gradient(135deg,#ffff00,#00ff00);color:#000;text-shadow:0 0 30px #fff;">Basket Random</div>
+        <div class="in">
+          <h2 class="tt">Basket Random</h2>
+          <p class="dc">only good shabbos goys play this one [OK]</p>
+          <button onclick="oF('https://149004934-bit.github.io/barfbagx2sbasketrandom.github.io/')" class="bt">GO FS TWIN</button>
+          <div class="tg" style="background:#00ff00;color:#000;font-weight:bold;">SPT</div>
+        </div>
+      </div>
+      <!-- Spiral Roll -->
       <div class="c">
         <div class="tb" style="background:linear-gradient(135deg,#00ffff,#ffff00,#ff00ff);color:#000;text-shadow:0 0 30px #fff;">Spiral Roll</div>
         <div class="in">
           <h2 class="tt">Spiral Roll</h2>
-          <p class="dc">Scrape wood into massive spirals, launch em to smash obstacles and clear levels. Satisfying AF runner gng — hold to roll, release to fly [OK]</p>
+          <p class="dc">Scrape wood into massive spirals, its that bs game we see in the ads [OK]</p>
           <button onclick="oF('https://spiralroll.h5games.usercontent.goog/v/5be6bbdd-7a11-43b1-9860-e3fc44859f25/')" class="bt">GO FS TWIN</button>
           <div class="tg" style="background:#ffff00;color:#000;font-weight:bold;">ARC</div>
         </div>
@@ -1175,6 +1487,26 @@
       <div id="s2" class="strobe"></div>
       <div id="s3" class="strobe"></div>
       <div id="s4" class="strobe"></div>
+    </div>
+  </div>
+  <!-- EMULATOR PAGE -->
+  <div id="emulator-page" style="display:none;">
+    <div id="emulator-slideshow"></div>
+    <div id="emulator-intro">
+      <div id="emulator-text">EMULATOR</div>
+      <div id="emulator-bottom">Loading...</div>
+    </div>
+    <div id="emulator-main">
+      <div id="emulator-frosted"></div>
+      <h1 id="emulator-h1">Welcome to the Emulator</h1>
+      <div id="emulator-menu">
+        <button onclick="oF('https://149004934-bit.github.io/emulatortestv1/')" class="bt">Enter Emulator</button>
+      </div>
+      <button class="emulator-btn" onclick="hideEmulator()">RETURN TO LAGOON</button>
+      <div id="es1" class="emulator-strobe"></div>
+      <div id="es2" class="emulator-strobe"></div>
+      <div id="es3" class="emulator-strobe"></div>
+      <div id="es4" class="emulator-strobe"></div>
     </div>
   </div>
   <!-- DRAG RACER PAGE -->
@@ -1291,6 +1623,14 @@
       document.getElementById('vrilpage').style.display = 'none';
       document.body.style.overflow = 'auto';
     }
+    function showEmulator() {
+      document.getElementById('emulator-page').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function hideEmulator() {
+      document.getElementById('emulator-page').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
     function showDragRacer() {
       document.getElementById('drag-racer-page').style.display = 'flex';
       document.body.style.overflow = 'hidden';
@@ -1331,7 +1671,7 @@
       "FLIGHT BOOKED TO LOCATION: Tel Aviv",
       "",
       "*----------------------------------------------------------*",
-      "\"READY TO HEAD TO THE LAGOON?\"",
+      "\READY TO HEAD TO THE LAGOON?\",
       "*----------------------------------------------------------*",
       "ERROR..."
     ];
@@ -1413,13 +1753,14 @@
     //  TITLE SCREEN LOGIC
     // ──────────────────────────────────────────────────────────────
     const splashTexts = [
-      "only in ohio bro 💀💀",
-      "skibidi ohio rizz gyatt moment",
-      "goon responsibly king",
-      "barfbagx2 world domination",
-      "freaky on main",
-      "T-50 VRIL or bust",
-      "goon lagoon final form"
+      "wish I was as cool as Yamgang",
+      "hmu on the gram (@litho_band)",
+      "ALL of US are taking that flight",
+      "this is stealing your data rn",
+      "XVA GAMES is lwk better",
+      "yoai, yuri or FUTA?",
+      "goon lagoon final form",
+      "anything but your work"
     ];
     document.getElementById('splash-text').textContent =
       splashTexts[Math.floor(Math.random() * splashTexts.length)];
