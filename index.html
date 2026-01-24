@@ -1321,7 +1321,6 @@
     const terminal = document.getElementById('terminal');
     let currentText = '';
     let typingActive = false;
-
     const introLines = [
       "BOOTING UP",
       "STARTING UP GAMES AND MOVIES",
@@ -1336,7 +1335,6 @@
       "*----------------------------------------------------------*",
       "ERROR..."
     ];
-
     function typeNextChar() {
       if (currentText.length < introLines.join('\n').length) {
         terminal.textContent += introLines.join('\n')[currentText.length];
@@ -1346,7 +1344,6 @@
         setTimeout(askFirstQuestion, 1200);
       }
     }
-
     function typeString(str, callback) {
       let i = 0;
       function next() {
@@ -1360,13 +1357,11 @@
       }
       next();
     }
-
     function askFirstQuestion() {
       typeString('\n\nDo you wish to enter, y/n? ', () => {
         document.addEventListener('keydown', firstAnswerHandler, {once: false});
       });
     }
-
     function firstAnswerHandler(e) {
       const k = e.key.toLowerCase();
       if (k === 'y' || k === 'n') {
@@ -1381,13 +1376,11 @@
         }
       }
     }
-
     function askSecondQuestion() {
       typeString('Verification required\nw faps? (y/n) ', () => {
         document.addEventListener('keydown', secondAnswerHandler, {once: false});
       });
     }
-
     function secondAnswerHandler(e) {
       const k = e.key.toLowerCase();
       if (k === 'y' || k === 'n') {
@@ -1404,7 +1397,6 @@
         document.removeEventListener('keydown', secondAnswerHandler);
       }
     }
-
     function startCubeTransition() {
       const cube = document.getElementById('cube');
       cube.classList.add('slide');
@@ -1413,12 +1405,10 @@
         document.getElementById('loader').classList.add('hidden');
       }, 1500);
     }
-
     // Start intro typing
     window.addEventListener('load', () => {
       setTimeout(typeNextChar, 800);
     });
-
     // ──────────────────────────────────────────────────────────────
     //  TITLE SCREEN LOGIC
     // ──────────────────────────────────────────────────────────────
@@ -1431,30 +1421,24 @@
       "T-50 VRIL or bust",
       "goon lagoon final form"
     ];
-
     document.getElementById('splash-text').textContent =
       splashTexts[Math.floor(Math.random() * splashTexts.length)];
-
     document.getElementById('play-button').onclick = () => {
       document.getElementById('title-screen').style.display = 'none';
       document.getElementById('main-content').style.display = 'block';
     };
-
     // Settings
     document.getElementById('settings-button').onclick = () => {
       document.getElementById('settings-menu').classList.add('visible');
     };
-
     document.getElementById('close-settings').onclick = () => {
       document.getElementById('settings-menu').classList.remove('visible');
     };
-
     // Settings Logic
     function applyTheme(theme) {
       document.body.className = `theme-${theme}`;
       localStorage.setItem('theme', theme);
     }
-
     function createParticles(type, count) {
       for (let i = 0; i < count; i++) {
         const particle = document.createElement('div');
@@ -1465,11 +1449,9 @@
         document.body.appendChild(particle);
       }
     }
-
     function removeParticles(type) {
       document.querySelectorAll(`.particle.${type}`).forEach(p => p.remove());
     }
-
     function toggleParticles(type, enabled) {
       if (enabled) {
         createParticles(type, 100);
@@ -1478,24 +1460,20 @@
       }
       localStorage.setItem(`${type}-enabled`, enabled);
     }
-
     document.getElementById('theme-select').addEventListener('change', e => applyTheme(e.target.value));
     document.getElementById('snow-toggle').addEventListener('change', e => toggleParticles('snow', e.target.checked));
     document.getElementById('rain-toggle').addEventListener('change', e => toggleParticles('rain', e.target.checked));
     document.getElementById('leaves-toggle').addEventListener('change', e => toggleParticles('leaf', e.target.checked));
     document.getElementById('ash-toggle').addEventListener('change', e => toggleParticles('ash', e.target.checked));
-
     // Load saved settings
     const savedTheme = localStorage.getItem('theme') || 'default';
     applyTheme(savedTheme);
     document.getElementById('theme-select').value = savedTheme;
-
     ['snow', 'rain', 'leaves', 'ash'].forEach(type => {
       const enabled = localStorage.getItem(`${type}-enabled`) === 'true';
       document.getElementById(`${type}-toggle`).checked = enabled;
       if (enabled) toggleParticles(type.replace('leaves', 'leaf'), true);
     });
-
     // ──────────────────────────────────────────────────────────────
     //  ORIGINAL CHATBOT (exactly as before)
     // ──────────────────────────────────────────────────────────────
@@ -1503,22 +1481,18 @@
       document.getElementById('chatbot-overlay').classList.add('open');
       setTimeout(() => document.getElementById('chatbot-input-field').focus(), 300);
     }
-
     function closeChatbot() {
       document.getElementById('chatbot-overlay').classList.remove('open');
     }
-
     const sendButton = document.getElementById("chatbot-send-btn");
     const chatInput = document.getElementById('chatbot-input-field');
     const chatbox = document.getElementById('chatbot-messages');
-
     async function displayMessage(message, isUser) {
       const msgElem = document.createElement('div');
       msgElem.textContent = message;
       msgElem.className = `chat-message ${isUser ? 'user-message' : 'assistant-message'}`;
       chatbox.appendChild(msgElem);
       chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the bottom
-
       // For assistant messages, add a slight delay before displaying
       if (!isUser) {
         msgElem.style.opacity = 0; // Start with opacity 0
@@ -1526,7 +1500,6 @@
         msgElem.style.opacity = 1; // Fade in
       }
     }
-
     async function callApi(apiUrl, prompt) {
       chatInput.value = "Typing...";
       chatInput.disabled = true;
@@ -1536,27 +1509,21 @@
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({prompt})
       });
-
       chatInput.value = "";
       chatInput.disabled = false;
       sendButton.disabled = false;
       chatInput.focus();
       return response.json();
     }
-
     chatInput.focus();
-
     sendButton.addEventListener('click', async () => {
       const message = chatInput.value.trim();
       if (!message) return;
-
       displayMessage(message, true);
       chatInput.value = '';
-
       const apiUrl = message.startsWith('/image') ?
         'https://backend.buildpicoapps.com/aero/run/image-generation-api?pk=v1-Z0FBQUFBQm5HUEtMSjJkakVjcF9IQ0M0VFhRQ0FmSnNDSHNYTlJSblE0UXo1Q3RBcjFPcl9YYy1OZUhteDZWekxHdWRLM1M1alNZTkJMWEhNOWd4S1NPSDBTWC12M0U2UGc9PQ==' :
         'https://backend.buildpicoapps.com/aero/run/llm-api?pk=v1-Z0FBQUFBQm5HUEtMSjJkakVjcF9IQ0M0VFhRQ0FmSnNDSHNYTlJSblE0UXo1Q3RBcjFPcl9YYy1OZUhteDZWekxHdWRLM1M1alNZTkJMWEhNOWd4S1NPSDBTWC12M0U2UGc9PQ==';
-
       try {
         const data = await callApi(apiUrl, message);
         if (data.status === 'success') {
@@ -1569,7 +1536,6 @@
         displayMessage('An error occurred. Please try again.', false);
       }
     });
-
     // ──────────────────────────────────────────────────────────────
     //  BACKGROUND ANIMATION (original)
     // ──────────────────────────────────────────────────────────────
@@ -1578,7 +1544,6 @@
     canvas.width = innerWidth;
     canvas.height = innerHeight;
     let hue = 0;
-
     function anim() {
       hue += 0.5;
       ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -1594,9 +1559,7 @@
       }
       requestAnimationFrame(anim);
     }
-
     anim();
-
     window.addEventListener('resize', () => {
       canvas.width = innerWidth;
       canvas.height = innerHeight;
