@@ -72,12 +72,14 @@
             --silver-shadow-active: 0 2px 0 #5A3A1A;
             --gold-shadow-active: 0 2px 0 #8B5A2B;
         }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', sans-serif;
         }
+
         body {
             background: var(--bg);
             color: var(--tx);
@@ -89,7 +91,7 @@
             display: flex;
             flex-direction: column;
         }
-        /* Desktop */
+
         #desktop {
             position: relative;
             flex: 1;
@@ -98,7 +100,7 @@
             background-size: var(--desktop-bg-size);
             display: none;
         }
-        /* Taskbar */
+
         #taskbar {
             background: var(--taskbar-bg);
             height: 40px;
@@ -110,6 +112,7 @@
             z-index: 1000;
             display: none;
         }
+
         #start-button {
             background: var(--silver-gradient);
             color: var(--win-white);
@@ -123,18 +126,21 @@
             box-shadow: var(--silver-shadow);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #start-button:hover {
             background: linear-gradient(135deg, #B87333, #FFD700, #C0C0C0);
             transform: translateY(-2px);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         #start-button:active {
             background: linear-gradient(135deg, #FFD700, #C0C0C0, #B87333);
             transform: translateY(0);
             box-shadow: var(--silver-shadow-active);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #taskbar-items {
             display: flex;
             flex: 1;
@@ -142,6 +148,7 @@
             overflow-x: auto;
             padding: 0 10px;
         }
+
         .taskbar-item {
             background: var(--taskbar-item-bg);
             color: var(--taskbar-text);
@@ -152,23 +159,28 @@
             white-space: nowrap;
             transition: background 0.2s;
         }
+
         .taskbar-item:hover {
             background: var(--taskbar-item-hover);
         }
+
         #system-tray {
             display: flex;
             gap: 5px;
             margin-left: auto;
         }
+
         .system-tray-item {
             color: var(--taskbar-text);
             padding: 5px;
             cursor: pointer;
             transition: color 0.2s;
         }
+
         .system-tray-item:hover {
             color: var(--win-blue-light);
         }
+
         #ai-chat-button {
             background-color: var(--win-green);
             color: var(--win-white);
@@ -181,10 +193,11 @@
             cursor: pointer;
             transition: background-color 0.2s;
         }
+
         #ai-chat-button:hover {
             background-color: var(--win-green-light);
         }
-        /* Start Menu */
+
         #start-menu {
             position: absolute;
             bottom: 40px;
@@ -198,6 +211,7 @@
             flex-direction: column;
             z-index: 1001;
         }
+
         #start-menu-header {
             background: var(--silver-gradient);
             color: var(--win-white);
@@ -207,17 +221,21 @@
             box-shadow: var(--silver-shadow);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #start-menu-content {
             display: flex;
             flex-direction: column;
         }
+
         .start-menu-section {
             padding: 5px 0;
             border-bottom: 1px solid var(--metallic-copper);
         }
+
         .start-menu-section:last-child {
             border-bottom: none;
         }
+
         .start-menu-item {
             color: var(--win-white);
             padding: 8px 15px;
@@ -226,13 +244,14 @@
             background: var(--start-menu-item-bg);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         .start-menu-item:hover {
             background: var(--gold-gradient);
             color: var(--win-white);
             transform: translateX(5px);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
-        /* Game Icons */
+
         .game-icon {
             position: absolute;
             width: 80px;
@@ -248,11 +267,13 @@
             border-radius: 5px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .game-icon:hover {
             transform: scale(1.1);
             box-shadow: var(--gl);
             background: rgba(0, 0, 0, 0.5);
         }
+
         .game-icon img {
             width: 48px;
             height: 48px;
@@ -260,6 +281,7 @@
             object-fit: contain;
             filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
         }
+
         .game-icon span {
             color: var(--win-white);
             font-size: 12px;
@@ -268,7 +290,7 @@
             word-wrap: break-word;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
-        /* Window System */
+
         .window {
             position: absolute;
             background: var(--window-bg);
@@ -283,10 +305,18 @@
             min-height: 200px;
             transform-origin: center;
         }
+
         @keyframes windowOpen {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
+
         .window-header {
             background: var(--window-header-bg);
             padding: 5px 10px;
@@ -299,14 +329,17 @@
             border-top-left-radius: 2px;
             border-top-right-radius: 2px;
         }
+
         .window-title {
             font-weight: bold;
             font-size: 14px;
         }
+
         .window-controls {
             display: flex;
             gap: 5px;
         }
+
         .window-control {
             width: 16px;
             height: 16px;
@@ -319,37 +352,43 @@
             font-weight: bold;
             transition: transform 0.2s ease;
         }
+
         .window-control:hover {
             transform: scale(1.2);
         }
+
         .window-control-minimize {
             background: var(--silver-gradient);
             color: var(--win-white);
             box-shadow: var(--silver-shadow);
         }
+
         .window-control-maximize {
             background: var(--silver-gradient);
             color: var(--win-white);
             box-shadow: var(--silver-shadow);
         }
+
         .window-control-close {
             background: var(--silver-gradient);
             color: var(--win-white);
             box-shadow: var(--silver-shadow);
         }
+
         .window-content {
             padding: 10px;
             flex: 1;
             overflow: auto;
             background: var(--window-content-bg);
         }
+
         .window-iframe {
             width: 100%;
             height: 100%;
             border: none;
             background: var(--window-content-bg);
         }
-        /* Search Bar */
+
         #search-bar {
             position: absolute;
             bottom: 40px;
@@ -365,6 +404,7 @@
             z-index: 1001;
             animation: fadeIn 0.3s ease-out;
         }
+
         #search-input {
             background: var(--window-content-bg);
             color: var(--win-white);
@@ -375,9 +415,11 @@
             outline: none;
             transition: background 0.3s ease;
         }
+
         #search-input:focus {
             background: var(--win-gray-light);
         }
+
         #search-results {
             display: flex;
             flex-direction: column;
@@ -385,17 +427,19 @@
             overflow-y: auto;
             background: var(--window-content-bg);
         }
+
         .search-result {
             color: var(--win-white);
             padding: 10px;
             cursor: pointer;
             transition: background 0.2s, transform 0.2s;
         }
+
         .search-result:hover {
             background: var(--win-blue);
             transform: translateX(5px);
         }
-        /* Options Menu */
+
         #options-menu {
             position: absolute;
             bottom: 40px;
@@ -410,17 +454,19 @@
             z-index: 1001;
             animation: fadeIn 0.3s ease-out;
         }
+
         .options-item {
             color: var(--win-white);
             padding: 10px;
             cursor: pointer;
             transition: background 0.2s, transform 0.2s;
         }
+
         .options-item:hover {
             background: var(--win-blue);
             transform: translateX(5px);
         }
-        /* Exit Confirmation */
+
         #exit-confirmation {
             position: fixed;
             top: 50%;
@@ -438,15 +484,18 @@
             min-width: 300px;
             animation: fadeIn 0.3s ease-out;
         }
+
         #exit-confirmation h3 {
             color: var(--win-white);
             margin-bottom: 20px;
             text-align: center;
         }
+
         #exit-confirmation-buttons {
             display: flex;
             gap: 10px;
         }
+
         #exit-confirmation-buttons button {
             background: var(--silver-gradient);
             color: var(--win-white);
@@ -459,19 +508,21 @@
             box-shadow: var(--silver-shadow);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #exit-confirmation-buttons button:hover {
             background: linear-gradient(135deg, #B87333, #FFD700, #C0C0C0);
             transform: translateY(-2px);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         #exit-confirmation-buttons button:active {
             background: linear-gradient(135deg, #FFD700, #C0C0C0, #B87333);
             transform: translateY(0);
             box-shadow: var(--silver-shadow-active);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
-        /* Particle Effects */
+
         .particle {
             position: absolute;
             width: var(--particle-size);
@@ -483,6 +534,7 @@
             animation: particleMove var(--particle-speed) linear forwards;
             box-shadow: 0 0 10px var(--particle-color);
         }
+
         @keyframes particleMove {
             0% {
                 transform: translate(0, 0) scale(1);
@@ -493,7 +545,7 @@
                 opacity: 0;
             }
         }
-        /* Snow Effect */
+
         .snowflake {
             position: absolute;
             width: 10px;
@@ -505,6 +557,7 @@
             animation: snowfall linear infinite;
             box-shadow: 0 0 10px white;
         }
+
         @keyframes snowfall {
             0% {
                 transform: translateY(0) rotate(0deg);
@@ -518,7 +571,7 @@
                 opacity: 0;
             }
         }
-        /* Confetti Effect */
+
         .confetti {
             position: absolute;
             width: 10px;
@@ -528,6 +581,7 @@
             animation: confettiFall linear infinite;
             box-shadow: 0 0 10px currentColor;
         }
+
         @keyframes confettiFall {
             0% {
                 transform: translateY(0) rotate(0deg);
@@ -541,7 +595,7 @@
                 opacity: 0;
             }
         }
-        /* Fireworks Effect */
+
         .firework {
             position: absolute;
             width: 5px;
@@ -552,6 +606,7 @@
             animation: fireworkExplode linear forwards;
             box-shadow: 0 0 10px currentColor;
         }
+
         @keyframes fireworkExplode {
             0% {
                 transform: scale(1);
@@ -562,7 +617,7 @@
                 opacity: 0;
             }
         }
-        /* Settings Screen */
+
         #settings-screen {
             position: fixed;
             inset: 0;
@@ -572,6 +627,7 @@
             z-index: 1001;
             animation: fadeIn 0.5s ease-out;
         }
+
         #settings-window {
             position: absolute;
             top: 50%;
@@ -587,10 +643,18 @@
             max-height: 80vh;
             animation: scaleIn 0.5s ease-out;
         }
+
         @keyframes scaleIn {
-            from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
-            to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            from {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
         }
+
         #settings-header {
             background: var(--window-header-bg);
             color: var(--window-header-text);
@@ -601,6 +665,7 @@
             justify-content: space-between;
             align-items: center;
         }
+
         #settings-close {
             background: var(--silver-gradient);
             color: var(--win-white);
@@ -617,18 +682,21 @@
             box-shadow: var(--silver-shadow);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #settings-close:hover {
             background: linear-gradient(135deg, #B87333, #FFD700, #C0C0C0);
             transform: scale(1.2);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         #settings-close:active {
             background: linear-gradient(135deg, #FFD700, #C0C0C0, #B87333);
             transform: scale(1);
             box-shadow: var(--silver-shadow-active);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #settings-content {
             padding: 20px;
             display: flex;
@@ -637,6 +705,7 @@
             overflow-y: auto;
             background: var(--window-content-bg);
         }
+
         .settings-section {
             background: var(--window-content-bg);
             border: var(--window-border);
@@ -644,25 +713,29 @@
             padding: 15px;
             transition: transform 0.3s ease;
         }
+
         .settings-section:hover {
             transform: translateX(5px);
         }
+
         .settings-section h2 {
             color: var(--win-white);
             margin-bottom: 10px;
             font-size: 16px;
         }
+
         .settings-option {
             margin-bottom: 15px;
         }
+
         .settings-option label {
             display: block;
             margin-bottom: 5px;
             color: var(--win-white);
             font-size: 14px;
         }
-        .settings-option input,
-        .settings-option select {
+
+        .settings-option input, .settings-option select {
             width: 100%;
             padding: 8px;
             border: 1px solid var(--win-gray-lighter);
@@ -672,11 +745,11 @@
             font-size: 14px;
             transition: background 0.3s ease;
         }
-        .settings-option input:focus,
-        .settings-option select:focus {
+
+        .settings-option input:focus, .settings-option select:focus {
             background: var(--win-gray-light);
         }
-        /* Credits Screen */
+
         #credits-screen {
             position: fixed;
             inset: 0;
@@ -686,6 +759,7 @@
             z-index: 1001;
             animation: fadeIn 0.5s ease-out;
         }
+
         #credits-window {
             position: absolute;
             top: 50%;
@@ -701,6 +775,7 @@
             max-height: 80vh;
             animation: scaleIn 0.5s ease-out;
         }
+
         #credits-header {
             background: var(--window-header-bg);
             color: var(--window-header-text);
@@ -711,6 +786,7 @@
             justify-content: space-between;
             align-items: center;
         }
+
         #credits-close {
             background: var(--silver-gradient);
             color: var(--win-white);
@@ -727,18 +803,21 @@
             box-shadow: var(--silver-shadow);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #credits-close:hover {
             background: linear-gradient(135deg, #B87333, #FFD700, #C0C0C0);
             transform: scale(1.2);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         #credits-close:active {
             background: linear-gradient(135deg, #FFD700, #C0C0C0, #B87333);
             transform: scale(1);
             box-shadow: var(--silver-shadow-active);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #credits-content {
             padding: 20px;
             display: flex;
@@ -747,6 +826,7 @@
             overflow-y: auto;
             background: var(--window-content-bg);
         }
+
         .credits-section {
             background: var(--window-content-bg);
             border: var(--window-border);
@@ -754,20 +834,23 @@
             padding: 15px;
             transition: transform 0.3s ease;
         }
+
         .credits-section:hover {
             transform: translateX(5px);
         }
+
         .credits-section h2 {
             color: var(--win-white);
             margin-bottom: 10px;
             font-size: 16px;
         }
+
         .credits-section p {
             color: var(--win-white);
             margin-bottom: 10px;
             line-height: 1.5;
         }
-        /* Loading Screen */
+
         #loading-screen {
             position: fixed;
             inset: 0;
@@ -779,6 +862,7 @@
             z-index: 1005;
             animation: fadeIn 0.5s ease-out;
         }
+
         #loading-logo {
             width: 100px;
             height: 100px;
@@ -788,6 +872,7 @@
             background-size: contain;
             filter: drop-shadow(0 0 10px var(--win-blue));
         }
+
         #loading-text {
             color: var(--win-white);
             font-size: 18px;
@@ -796,6 +881,7 @@
             position: relative;
             z-index: 1006;
         }
+
         #minecraft-text {
             color: var(--minecraft-yellow);
             font-size: 24px;
@@ -806,6 +892,7 @@
             position: relative;
             z-index: 1006;
         }
+
         #loading-progress {
             width: 200px;
             height: 10px;
@@ -815,6 +902,7 @@
             margin-bottom: 20px;
             box-shadow: 0 0 5px var(--win-blue);
         }
+
         #loading-progress-bar {
             height: 100%;
             background: var(--silver-gradient);
@@ -822,16 +910,19 @@
             transition: width 0.3s;
             box-shadow: 0 0 5px var(--win-blue);
         }
+
         #loading-status {
             color: var(--win-white);
             font-size: 14px;
             text-shadow: 0 0 5px var(--win-blue);
         }
+
         #loading-animation {
             position: absolute;
             inset: 0;
             pointer-events: none;
         }
+
         .orb {
             position: absolute;
             width: 10px;
@@ -841,6 +932,7 @@
             animation: orbMove 5s infinite ease-in-out;
             box-shadow: 0 0 10px var(--win-blue);
         }
+
         @keyframes orbMove {
             0%, 100% {
                 transform: translate(0, 0);
@@ -855,23 +947,45 @@
                 transform: translate(50px, -50px);
             }
         }
+
         @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.1); }
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
         }
+
         @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
+
         @keyframes textPulse {
-            0%, 100% { text-shadow: 0 0 10px var(--minecraft-yellow); }
-            50% { text-shadow: 0 0 20px var(--minecraft-yellow), 0 0 30px var(--minecraft-yellow); }
+            0%, 100% {
+                text-shadow: 0 0 10px var(--minecraft-yellow);
+            }
+            50% {
+                text-shadow: 0 0 20px var(--minecraft-yellow), 0 0 30px var(--minecraft-yellow);
+            }
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
-        /* Minecraft Start Menu */
+
         #minecraft-menu {
             position: fixed;
             inset: 0;
@@ -884,6 +998,7 @@
             z-index: 1006;
             animation: fadeIn 0.5s ease-out;
         }
+
         #goon-lagoon-title {
             font-family: 'Bangers', cursive;
             font-size: 64px;
@@ -899,11 +1014,19 @@
             animation: gradient 3s linear infinite;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
+
         @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
+
         #minecraft-phrase {
             font-family: 'Minecraftia', sans-serif;
             font-size: 24px;
@@ -912,12 +1035,14 @@
             margin-bottom: 50px;
             min-height: 30px;
         }
+
         #minecraft-buttons {
             display: flex;
             flex-direction: column;
             gap: 15px;
             width: 300px;
         }
+
         .minecraft-button {
             background: var(--silver-gradient);
             color: var(--win-white);
@@ -931,19 +1056,21 @@
             transition: all 0.3s ease;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         .minecraft-button:hover {
             background: linear-gradient(135deg, #B87333, #FFD700, #C0C0C0);
             transform: translateY(-2px);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         .minecraft-button:active {
             background: linear-gradient(135deg, #FFD700, #C0C0C0, #B87333);
             transform: translateY(0);
             box-shadow: var(--silver-shadow-active);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
-        /* AI Chat Window */
+
         #ai-chat-window {
             position: fixed;
             bottom: 40px;
@@ -959,10 +1086,18 @@
             z-index: 1001;
             animation: slideIn 0.3s ease-out;
         }
+
         @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
+
         #ai-chat-header {
             background: var(--window-header-bg);
             color: var(--window-header-text);
@@ -973,6 +1108,7 @@
             justify-content: space-between;
             align-items: center;
         }
+
         #ai-chat-close {
             background: var(--silver-gradient);
             color: var(--win-white);
@@ -989,18 +1125,21 @@
             box-shadow: var(--silver-shadow);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #ai-chat-close:hover {
             background: linear-gradient(135deg, #B87333, #FFD700, #C0C0C0);
             transform: scale(1.2);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         #ai-chat-close:active {
             background: linear-gradient(135deg, #FFD700, #C0C0C0, #B87333);
             transform: scale(1);
             box-shadow: var(--silver-shadow-active);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #ai-chat-content {
             flex: 1;
             padding: 10px;
@@ -1010,6 +1149,7 @@
             gap: 8px;
             background: var(--window-content-bg);
         }
+
         .ai-message {
             padding: 10px 15px;
             border-radius: 20px;
@@ -1018,6 +1158,7 @@
             animation: fadeIn 0.3s ease forwards;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
+
         .user-message {
             align-self: flex-end;
             background-color: #6200EA;
@@ -1025,6 +1166,7 @@
             border-top-left-radius: 0;
             box-shadow: 0 0 5px #6200EA;
         }
+
         .assistant-message {
             align-self: flex-start;
             background-color: #E0E0E0;
@@ -1032,6 +1174,7 @@
             border-top-right-radius: 0;
             box-shadow: 0 0 5px #E0E0E0;
         }
+
         #ai-chat-input {
             display: flex;
             padding: 10px;
@@ -1039,6 +1182,7 @@
             background-color: #F5F5F5;
             align-items: center;
         }
+
         #ai-chat-textarea {
             flex: 1;
             padding: 10px;
@@ -1050,10 +1194,12 @@
             color: var(--win-white);
             outline: none;
         }
+
         #ai-chat-textarea:focus {
             border-color: #6200EA;
             box-shadow: 0 0 5px #6200EA;
         }
+
         #ai-chat-send {
             padding: 10px 15px;
             border: none;
@@ -1066,13 +1212,16 @@
             transition: all 0.3s ease;
             box-shadow: 0 0 5px #6200EA;
         }
+
         #ai-chat-send:hover {
             background-color: #3700B3;
             box-shadow: 0 0 10px #3700B3;
         }
+
         #ai-chat-send .material-icons {
             margin-right: 5px;
         }
+
         .spinner {
             display: none;
             border: 4px solid rgba(0, 0, 0, 0.1);
@@ -1082,11 +1231,16 @@
             border-top-color: #6200EA;
             animation: spin 1s linear infinite;
         }
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        /* Achievements and Leaderboard Menus */
+
         #achievements-menu, #leaderboard-menu, #game-stats-menu {
             position: fixed;
             top: 50%;
@@ -1104,6 +1258,7 @@
             overflow-y: auto;
             animation: scaleIn 0.5s ease-out;
         }
+
         #achievements-header, #leaderboard-header, #game-stats-header {
             background: var(--window-header-bg);
             color: var(--window-header-text);
@@ -1114,6 +1269,7 @@
             justify-content: space-between;
             align-items: center;
         }
+
         #achievements-close, #leaderboard-close, #game-stats-close {
             background: var(--silver-gradient);
             color: var(--win-white);
@@ -1130,18 +1286,21 @@
             box-shadow: var(--silver-shadow);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #achievements-close:hover, #leaderboard-close:hover, #game-stats-close:hover {
             background: linear-gradient(135deg, #B87333, #FFD700, #C0C0C0);
             transform: scale(1.2);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         #achievements-close:active, #leaderboard-close:active, #game-stats-close:active {
             background: linear-gradient(135deg, #FFD700, #C0C0C0, #B87333);
             transform: scale(1);
             box-shadow: var(--silver-shadow-active);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #achievements-content, #leaderboard-content, #game-stats-content {
             padding: 20px;
             display: flex;
@@ -1149,6 +1308,7 @@
             gap: 20px;
             background: var(--window-content-bg);
         }
+
         .achievement-item, .leaderboard-item, .game-stat-item {
             background: var(--window-content-bg);
             border: var(--window-border);
@@ -1159,9 +1319,11 @@
             gap: 15px;
             transition: transform 0.3s ease;
         }
+
         .achievement-item:hover, .leaderboard-item:hover, .game-stat-item:hover {
             transform: translateX(5px);
         }
+
         .achievement-icon, .leaderboard-icon {
             width: 50px;
             height: 50px;
@@ -1176,32 +1338,38 @@
             transition: all 0.3s ease;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         .achievement-icon:hover, .leaderboard-icon:hover {
             transform: scale(1.1);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         .achievement-info, .leaderboard-info {
             flex: 1;
         }
+
         .achievement-title, .leaderboard-title {
             color: var(--win-white);
             font-weight: bold;
             margin-bottom: 5px;
         }
+
         .achievement-description, .leaderboard-description {
             color: var(--win-white);
             font-size: 14px;
         }
+
         .game-stat-title {
             color: var(--win-white);
             font-weight: bold;
         }
+
         .game-stat-value {
             color: var(--win-white);
             margin-left: auto;
         }
-        /* User Profile Screen */
+
         #user-profile-screen {
             position: fixed;
             inset: 0;
@@ -1211,6 +1379,7 @@
             z-index: 1001;
             animation: fadeIn 0.5s ease-out;
         }
+
         #user-profile-window {
             position: absolute;
             top: 50%;
@@ -1226,6 +1395,7 @@
             max-height: 80vh;
             animation: scaleIn 0.5s ease-out;
         }
+
         #user-profile-header {
             background: var(--window-header-bg);
             color: var(--window-header-text);
@@ -1236,6 +1406,7 @@
             justify-content: space-between;
             align-items: center;
         }
+
         #user-profile-close {
             background: var(--silver-gradient);
             color: var(--win-white);
@@ -1252,18 +1423,21 @@
             box-shadow: var(--silver-shadow);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #user-profile-close:hover {
             background: linear-gradient(135deg, #B87333, #FFD700, #C0C0C0);
             transform: scale(1.2);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         #user-profile-close:active {
             background: linear-gradient(135deg, #FFD700, #C0C0C0, #B87333);
             transform: scale(1);
             box-shadow: var(--silver-shadow-active);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #user-profile-content {
             padding: 20px;
             display: flex;
@@ -1272,6 +1446,7 @@
             overflow-y: auto;
             background: var(--window-content-bg);
         }
+
         .user-profile-section {
             background: var(--window-content-bg);
             border: var(--window-border);
@@ -1279,25 +1454,29 @@
             padding: 15px;
             transition: transform 0.3s ease;
         }
+
         .user-profile-section:hover {
             transform: translateX(5px);
         }
+
         .user-profile-section h2 {
             color: var(--win-white);
             margin-bottom: 10px;
             font-size: 16px;
         }
+
         .user-profile-option {
             margin-bottom: 15px;
         }
+
         .user-profile-option label {
             display: block;
             margin-bottom: 5px;
             color: var(--win-white);
             font-size: 14px;
         }
-        .user-profile-option input,
-        .user-profile-option select {
+
+        .user-profile-option input, .user-profile-option select {
             width: 100%;
             padding: 8px;
             border: 1px solid var(--win-gray-lighter);
@@ -1307,11 +1486,11 @@
             font-size: 14px;
             transition: background 0.3s ease;
         }
-        .user-profile-option input:focus,
-        .user-profile-option select:focus {
+
+        .user-profile-option input:focus, .user-profile-option select:focus {
             background: var(--win-gray-light);
         }
-        /* Community Screen */
+
         #community-screen {
             position: fixed;
             inset: 0;
@@ -1321,6 +1500,7 @@
             z-index: 1001;
             animation: fadeIn 0.5s ease-out;
         }
+
         #community-window {
             position: absolute;
             top: 50%;
@@ -1336,6 +1516,7 @@
             max-height: 80vh;
             animation: scaleIn 0.5s ease-out;
         }
+
         #community-header {
             background: var(--window-header-bg);
             color: var(--window-header-text);
@@ -1346,6 +1527,7 @@
             justify-content: space-between;
             align-items: center;
         }
+
         #community-close {
             background: var(--silver-gradient);
             color: var(--win-white);
@@ -1362,18 +1544,21 @@
             box-shadow: var(--silver-shadow);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #community-close:hover {
             background: linear-gradient(135deg, #B87333, #FFD700, #C0C0C0);
             transform: scale(1.2);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         #community-close:active {
             background: linear-gradient(135deg, #FFD700, #C0C0C0, #B87333);
             transform: scale(1);
             box-shadow: var(--silver-shadow-active);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #community-content {
             padding: 20px;
             display: flex;
@@ -1382,6 +1567,7 @@
             overflow-y: auto;
             background: var(--window-content-bg);
         }
+
         .community-section {
             background: var(--window-content-bg);
             border: var(--window-border);
@@ -1389,14 +1575,17 @@
             padding: 15px;
             transition: transform 0.3s ease;
         }
+
         .community-section:hover {
             transform: translateX(5px);
         }
+
         .community-section h2 {
             color: var(--win-white);
             margin-bottom: 10px;
             font-size: 16px;
         }
+
         .community-post {
             background: var(--window-content-bg);
             border: var(--window-border);
@@ -1405,14 +1594,17 @@
             margin-bottom: 15px;
             transition: transform 0.3s ease;
         }
+
         .community-post:hover {
             transform: translateX(5px);
         }
+
         .community-post-header {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
         }
+
         .community-post-avatar {
             width: 40px;
             height: 40px;
@@ -1428,28 +1620,34 @@
             transition: all 0.3s ease;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         .community-post-avatar:hover {
             transform: scale(1.1);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         .community-post-user {
             color: var(--win-white);
             font-weight: bold;
         }
+
         .community-post-time {
             color: var(--win-gray-lighter);
             font-size: 12px;
             margin-left: auto;
         }
+
         .community-post-content {
             color: var(--win-white);
             margin-bottom: 10px;
         }
+
         .community-post-actions {
             display: flex;
             gap: 15px;
         }
+
         .community-post-action {
             color: var(--win-gray-lighter);
             font-size: 14px;
@@ -1458,12 +1656,15 @@
             align-items: center;
             transition: color 0.3s ease;
         }
+
         .community-post-action:hover {
             color: var(--win-blue);
         }
+
         .community-post-action .material-icons {
             margin-right: 5px;
         }
+
         #community-post-form {
             background: var(--window-content-bg);
             border: var(--window-border);
@@ -1471,14 +1672,17 @@
             padding: 15px;
             transition: transform 0.3s ease;
         }
+
         #community-post-form:hover {
             transform: translateX(5px);
         }
+
         #community-post-form h2 {
             color: var(--win-white);
             margin-bottom: 10px;
             font-size: 16px;
         }
+
         #community-post-form textarea {
             width: 100%;
             padding: 8px;
@@ -1491,9 +1695,11 @@
             min-height: 100px;
             transition: background 0.3s ease;
         }
+
         #community-post-form textarea:focus {
             background: var(--win-gray-light);
         }
+
         #community-post-form button {
             background: var(--silver-gradient);
             color: var(--win-white);
@@ -1506,19 +1712,21 @@
             box-shadow: var(--silver-shadow);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #community-post-form button:hover {
             background: linear-gradient(135deg, #B87333, #FFD700, #C0C0C0);
             transform: translateY(-2px);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         #community-post-form button:active {
             background: linear-gradient(135deg, #FFD700, #C0C0C0, #B87333);
             transform: translateY(0);
             box-shadow: var(--silver-shadow-active);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
-        /* Analytics Screen */
+
         #analytics-screen {
             position: fixed;
             inset: 0;
@@ -1528,6 +1736,7 @@
             z-index: 1001;
             animation: fadeIn 0.5s ease-out;
         }
+
         #analytics-window {
             position: absolute;
             top: 50%;
@@ -1543,6 +1752,7 @@
             max-height: 80vh;
             animation: scaleIn 0.5s ease-out;
         }
+
         #analytics-header {
             background: var(--window-header-bg);
             color: var(--window-header-text);
@@ -1553,6 +1763,7 @@
             justify-content: space-between;
             align-items: center;
         }
+
         #analytics-close {
             background: var(--silver-gradient);
             color: var(--win-white);
@@ -1569,18 +1780,21 @@
             box-shadow: var(--silver-shadow);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #analytics-close:hover {
             background: linear-gradient(135deg, #B87333, #FFD700, #C0C0C0);
             transform: scale(1.2);
             box-shadow: var(--silver-shadow-hover);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
+
         #analytics-close:active {
             background: linear-gradient(135deg, #FFD700, #C0C0C0, #B87333);
             transform: scale(1);
             box-shadow: var(--silver-shadow-active);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+
         #analytics-content {
             padding: 20px;
             display: flex;
@@ -1589,6 +1803,7 @@
             overflow-y: auto;
             background: var(--window-content-bg);
         }
+
         .analytics-section {
             background: var(--window-content-bg);
             border: var(--window-border);
@@ -1596,14 +1811,17 @@
             padding: 15px;
             transition: transform 0.3s ease;
         }
+
         .analytics-section:hover {
             transform: translateX(5px);
         }
+
         .analytics-section h2 {
             color: var(--win-white);
             margin-bottom: 10px;
             font-size: 16px;
         }
+
         .analytics-chart {
             width: 100%;
             height: 300px;
@@ -1616,14 +1834,17 @@
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
         }
+
         .analytics-chart:hover {
             transform: scale(1.02);
         }
+
         .analytics-stats {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
         }
+
         .analytics-stat {
             background: var(--win-gray);
             border-radius: 2px;
@@ -1633,20 +1854,23 @@
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
         }
+
         .analytics-stat:hover {
             transform: scale(1.02);
         }
+
         .analytics-stat-title {
             color: var(--win-white);
             font-weight: bold;
             margin-bottom: 5px;
         }
+
         .analytics-stat-value {
             color: var(--win-blue);
             font-size: 24px;
             font-weight: bold;
         }
-        /* Lightning Effect */
+
         .lightning-effect {
             position: fixed;
             inset: 0;
@@ -1654,6 +1878,7 @@
             z-index: 1007;
             display: none;
         }
+
         .lightning-bolt {
             position: absolute;
             width: 5px;
@@ -1663,6 +1888,7 @@
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             animation: lightningFlash 0.5s ease-out forwards;
         }
+
         @keyframes lightningFlash {
             0% {
                 opacity: 1;
@@ -1677,6 +1903,7 @@
                 transform: scaleY(1);
             }
         }
+
         .lightning-trace {
             position: absolute;
             width: 2px;
@@ -1686,6 +1913,7 @@
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
             animation: lightningTrace 1s ease-out forwards;
         }
+
         @keyframes lightningTrace {
             0% {
                 opacity: 1;
@@ -1696,7 +1924,7 @@
                 transform: scaleY(1);
             }
         }
-        /* Transition Overlay */
+
         #transition-overlay {
             position: fixed;
             inset: 0;
@@ -1708,6 +1936,7 @@
             z-index: 1008;
             animation: fadeIn 0.5s ease-out;
         }
+
         #transition-text {
             font-family: 'Bangers', cursive;
             font-size: 64px;
@@ -1723,11 +1952,16 @@
             animation: gradient 3s linear infinite, fadeOut 2s ease-out forwards;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
+
         @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
         }
-        /* Neon Light Sign */
+
         .neon-light {
             position: fixed;
             top: 50%;
@@ -1743,6 +1977,7 @@
             display: none;
             z-index: 1009;
         }
+
         @keyframes flicker {
             0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
                 text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
@@ -1753,7 +1988,7 @@
                 opacity: 0.5;
             }
         }
-        /* Light Bulb Break Effect */
+
         .light-bulb-break {
             position: fixed;
             top: 50%;
@@ -1767,6 +2002,7 @@
             z-index: 1010;
             animation: bulbBreak 0.5s forwards;
         }
+
         @keyframes bulbBreak {
             0% {
                 transform: translate(-50%, -50%) scale(1);
@@ -1777,7 +2013,7 @@
                 opacity: 0;
             }
         }
-        /* Flash Effect */
+
         .flash {
             position: fixed;
             top: 0;
@@ -1789,6 +2025,7 @@
             z-index: 1011;
             animation: flash 0.3s forwards;
         }
+
         @keyframes flash {
             0% {
                 opacity: 1;
@@ -1797,7 +2034,7 @@
                 opacity: 0;
             }
         }
-        /* Bubble Effect */
+
         .bubble {
             position: absolute;
             width: var(--particle-size);
@@ -1810,9 +2047,14 @@
             box-shadow: 0 0 10px var(--particle-color);
             background-color: rgba(173, 216, 230, 0.7);
         }
+
         @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -1828,6 +2070,7 @@
         <div id="loading-status">Initializing components...</div>
         <div id="loading-animation"></div>
     </div>
+
     <!-- Minecraft Start Menu -->
     <div id="minecraft-menu" style="display: none;">
         <h1 id="goon-lagoon-title">THE GOON LAGOON</h1>
@@ -1839,10 +2082,12 @@
             <button class="minecraft-button" id="exit-button">Exit</button>
         </div>
     </div>
+
     <!-- Desktop -->
     <div id="desktop">
         <!-- Game Icons will be added here dynamically -->
     </div>
+
     <!-- Taskbar -->
     <div id="taskbar">
         <button id="start-button">Start</button>
@@ -1854,6 +2099,7 @@
             <div class="system-tray-item" id="ai-chat-button">🤖</div>
         </div>
     </div>
+
     <!-- Start Menu -->
     <div id="start-menu">
         <div id="start-menu-header">THE GOON LAGOON</div>
@@ -1871,6 +2117,7 @@
             </div>
         </div>
     </div>
+
     <!-- Search Bar -->
     <div id="search-bar">
         <input type="text" id="search-input" placeholder="Search for games...">
@@ -1878,6 +2125,7 @@
             <!-- Search results will be added here dynamically -->
         </div>
     </div>
+
     <!-- AI Chat Window -->
     <div id="ai-chat-window">
         <div id="ai-chat-header">
@@ -1894,6 +2142,7 @@
             </button>
         </div>
     </div>
+
     <!-- Settings Screen -->
     <div id="settings-screen">
         <div id="settings-window">
@@ -2122,7 +2371,7 @@
                         </select>
                     </div>
                     <div class="settings-option">
-                        <label for="screen-reader"Screen Reader:</label>
+                        <label for="screen-reader">Screen Reader:</label>
                         <select id="screen-reader">
                             <option value="off">Off</option>
                             <option value="on">On</option>
@@ -2132,6 +2381,7 @@
             </div>
         </div>
     </div>
+
     <!-- Credits Screen -->
     <div id="credits-screen">
         <div id="credits-window">
@@ -2169,6 +2419,7 @@
             </div>
         </div>
     </div>
+
     <!-- Achievements Menu -->
     <div id="achievements-menu">
         <div id="achievements-header">
@@ -2179,6 +2430,7 @@
             <!-- Achievements will be added here dynamically -->
         </div>
     </div>
+
     <!-- Leaderboard Menu -->
     <div id="leaderboard-menu">
         <div id="leaderboard-header">
@@ -2189,6 +2441,7 @@
             <!-- Leaderboard entries will be added here dynamically -->
         </div>
     </div>
+
     <!-- Game Stats Menu -->
     <div id="game-stats-menu">
         <div id="game-stats-header">
@@ -2199,6 +2452,7 @@
             <!-- Game stats will be added here dynamically -->
         </div>
     </div>
+
     <!-- User Profile Screen -->
     <div id="user-profile-screen">
         <div id="user-profile-window">
@@ -2306,6 +2560,7 @@
             </div>
         </div>
     </div>
+
     <!-- Community Screen -->
     <div id="community-screen">
         <div id="community-window">
@@ -2330,6 +2585,7 @@
             </div>
         </div>
     </div>
+
     <!-- Analytics Screen -->
     <div id="analytics-screen">
         <div id="analytics-window">
@@ -2374,6 +2630,7 @@
             </div>
         </div>
     </div>
+
     <!-- Exit Confirmation -->
     <div id="exit-confirmation">
         <h3>Are you sure you want to exit?</h3>
@@ -2382,18 +2639,24 @@
             <button onclick="hideExitConfirmation()">No</button>
         </div>
     </div>
+
     <!-- Lightning Effect -->
     <div id="lightning-effect"></div>
+
     <!-- Transition Overlay -->
     <div id="transition-overlay">
         <div id="transition-text">BX2</div>
     </div>
+
     <!-- Neon Light Sign -->
     <div class="neon-light" id="neon-light">BarfbagX2</div>
+
     <!-- Light Bulb Break Effect -->
     <div class="light-bulb-break" id="light-bulb-break"></div>
+
     <!-- Flash Effect -->
     <div class="flash" id="flash"></div>
+
     <script>
         // Game data with actual images
         const games = [
@@ -2431,22 +2694,16 @@
             { id: 'paper-io-2', name: 'Paper.io 2', url: 'https://bitstore1612.github.io/g/class-505/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=P' },
             { id: 'crossy-road', name: 'Crossy Road', url: 'blocked', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=C' },
             { id: 'fireboy-and-watergirl', name: 'Fireboy and Watergirl', url: 'https://bitstore1612.github.io/g177/class-346', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=G' },
-            { id: 'aaronos', name: 'AaronOS', url: 'https://aaronos.dev/AaronOS/aosBeta.php
-', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=A' },
-            { id: 'niche-ai', name: 'Niche AI', url: 'https://demo.tabbyml.com/
-', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=N' },
-            { id: 'spiral-roll', name: 'Spiral Roll', url: 'https://spiralroll.h5games.usercontent.goog/v/5be6bbdd-7a11-43b1-9860-e3fc44859f25/
-', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=S' },
+            { id: 'aaronos', name: 'AaronOS', url: 'https://aaronos.dev/AaronOS/aosBeta.php ', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=A' },
+            { id: 'niche-ai', name: 'Niche AI', url: 'https://demo.tabbyml.com/ ', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=N' },
+            { id: 'spiral-roll', name: 'Spiral Roll', url: 'https://spiralroll.h5games.usercontent.goog/v/5be6bbdd-7a11-43b1-9860-e3fc44859f25/ ', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=S' },
             { id: 'funny-shooter-2', name: 'Funny Shooter 2', url: 'https://barfbagx2.github.io/barfbagx2sfunnyshooter2.github.io/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=F' },
-            { id: 'grow-a-garden', name: 'Grow a Garden', url: 'https://barfbagx2.github.io/barfbagx2sgrowagarden.github.io/
-', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=G' },
-            { id: 'contra-3', name: 'Contra 3', url: 'https://barfbagx2.github.io/barfbagx2scontra3.github.io/
-', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=C' },
+            { id: 'grow-a-garden', name: 'Grow a Garden', url: 'https://barfbagx2.github.io/barfbagx2sgrowagarden.github.io/ ', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=G' },
+            { id: 'contra-3', name: 'Contra 3', url: 'https://barfbagx2.github.io/barfbagx2scontra3.github.io/ ', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=C' },
             { id: 'clash-royale', name: 'Clash Royale', url: 'https://barfbagx2.github.io/barfbagx2sclashroyale.github.io/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=C' },
             { id: 'karlson-demo', name: 'Karlson Demo', url: 'https://barfbagx2.github.io/barfbagx2skarlsondemo.github.io/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=K' },
             { id: 'steal-a-brainrot-2', name: 'Steal a Brainrot 2', url: 'https://149004934-bit.github.io/barfbagx2sstealabrainrot2.github.io/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=S' },
-            { id: 'superhot', name: 'Superhot', url: 'https://149004934-bit.github.io/barfbagx2ssuperhot.github.io/
-', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=S' },
+            { id: 'superhot', name: 'Superhot', url: 'https://149004934-bit.github.io/barfbagx2ssuperhot.github.io/ ', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=S' },
             { id: 'emulator-test-v1', name: 'Emulator Test V1', url: 'https://149004934-bit.github.io/emulatortestv1/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=E' },
             { id: '1v1-lol', name: '1v1 Lol', url: 'https://149004934-bit.github.io/barfbagx2s1v1lol.github.com/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=1' },
             { id: 'doki-doki-lit-club', name: 'Doki Doki Lit Club', url: 'https://149004934-bit.github.io/barfbagx2sdokidokilitclub.github.io/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=D' },
@@ -2460,8 +2717,7 @@
             { id: 'fallout', name: 'Fallout', url: 'https://149004934-bit.github.io/barfbagx2sfallout.github.io/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=F' },
             { id: 'osu', name: 'OSU!', url: 'https://github.com/149004934-bit/barfbagx2sosu.github.io/settings/pages', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=O' },
             { id: 'rivals', name: 'Rivals', url: 'https://barfbagx2.github.io/barfbagx2srivals.github.io/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=R' },
-            { id: 'fnad-2', name: 'FNAD', url: 'https://barfbagx2.github.io/barfbagx2sfnad.github.io/
-', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=F' },
+            { id: 'fnad-2', name: 'FNAD', url: 'https://barfbagx2.github.io/barfbagx2sfnad.github.io/ ', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=F' },
             { id: 'obby-bike', name: 'Obby Bike', url: 'https://barfbagx2.github.io/barfbagx2sobbybutyouronabike.github.io/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=O' },
             { id: 'fnae', name: 'FNAE', url: 'https://barfbagx2.github.io/barfbagx2sgfnae.github.io/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=G' },
             { id: 'pvz-fusion', name: 'PVZ Fusion', url: 'https://barfbagx2.github.io/barfbagx2spvzfusion.github.io/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=P' },
@@ -2471,6 +2727,7 @@
             { id: '99nightsintheforest', name: '99 Nights in the Forest', url: 'https://149004934-bit.github.io/barfbagx2s99nightsintheforest.github.io/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=9' },
             { id: 'peggle', name: 'Peggle', url: 'https://barfbagx2.github.io/barfbagx2speggle.github.io/', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=P' }
         ];
+
         // Minecraft-style loading phrases
         const minecraftPhrases = [
             "TGL ON TOP...",
@@ -2513,6 +2770,7 @@
             "buzzword -enually...",
             "BarfbagX2 loves yall twin..."
         ];
+
         // Minecraft-style menu phrases
         const menuPhrases = [
             "Welcome to THE GOON LAGOON!",
@@ -2524,9 +2782,11 @@
             "WE know whose fault it is!",
             "Anti goyslop!"
         ];
+
         // Window management
         let windows = [];
         let zIndexCounter = 1003;
+
         // Game stats data
         let gameStats = {
             totalGamesPlayed: 0,
@@ -2536,8 +2796,10 @@
             averageScore: 0,
             gameSpecificStats: {}
         };
+
         // Current particle effect
         let currentParticleEffect = null;
+
         // User profile data
         let userProfile = {
             username: '',
@@ -2554,40 +2816,50 @@
             pushNotifications: 'on',
             inAppNotifications: 'on'
         };
+
         // Community posts data
         let communityPosts = [];
+
         // Initialize the desktop
         function initDesktop() {
             const desktop = document.getElementById('desktop');
+
             // Calculate grid layout for game icons
             const iconSize = 80;
             const padding = 20;
             const cols = Math.floor((window.innerWidth - padding * 2) / (iconSize + padding));
             const rows = Math.ceil(games.length / cols);
+
             // Position game icons in a grid
             games.forEach((game, index) => {
                 const row = Math.floor(index / cols);
                 const col = index % cols;
                 const x = padding + col * (iconSize + padding);
                 const y = padding + row * (iconSize + padding);
+
                 const gameIcon = document.createElement('div');
                 gameIcon.className = 'game-icon';
                 gameIcon.style.left = `${x}px`;
                 gameIcon.style.top = `${y}px`;
                 gameIcon.dataset.gameId = game.id;
+
                 // Use a placeholder image if the game icon fails to load
                 gameIcon.innerHTML = `
                     <img src="${game.icon}" alt="${game.name}" onerror="this.src='https://via.placeholder.com/48/0078d7/ffffff?text=${encodeURIComponent(game.name.substring(0, 1))}'; this.onerror=null;">
                     <span>${game.name}</span>
                 `;
+
                 gameIcon.addEventListener('click', () => openGame(game));
                 gameIcon.addEventListener('dblclick', () => openGame(game));
+
                 desktop.appendChild(gameIcon);
             });
+
             // Add event listeners for UI elements
             document.getElementById('start-button').addEventListener('click', toggleStartMenu);
             document.getElementById('search-button').addEventListener('click', toggleSearchBar);
             document.getElementById('ai-chat-button').addEventListener('click', toggleAIChat);
+
             // Add event listeners for Minecraft menu buttons
             document.getElementById('start-game').addEventListener('click', startGameTransition);
             document.getElementById('settings-button').addEventListener('click', (e) => {
@@ -2602,6 +2874,7 @@
                 e.stopPropagation();
                 showExitConfirmationFromMenu();
             });
+
             // Close menus when clicking elsewhere
             document.addEventListener('click', (e) => {
                 if (!e.target.closest('#start-button') && !e.target.closest('#start-menu')) {
@@ -2614,16 +2887,19 @@
                     hideSearchBar();
                 }
             });
+
             // Add search functionality
             const searchInput = document.getElementById('search-input');
             searchInput.addEventListener('input', () => {
                 const searchTerm = searchInput.value.toLowerCase();
                 const searchResults = document.getElementById('search-results');
                 searchResults.innerHTML = '';
+
                 if (searchTerm.length > 0) {
                     const filteredGames = games.filter(game =>
                         game.name.toLowerCase().includes(searchTerm)
                     );
+
                     filteredGames.forEach(game => {
                         const resultItem = document.createElement('div');
                         resultItem.className = 'search-result';
@@ -2636,25 +2912,33 @@
                     });
                 }
             });
+
             // Change Minecraft menu phrase periodically
             setInterval(() => {
                 const randomPhrase = menuPhrases[Math.floor(Math.random() * menuPhrases.length)];
                 document.getElementById('minecraft-phrase').textContent = randomPhrase;
             }, 5000);
+
             // Initialize AI chat
             initAIChat();
+
             // Initialize loading animation
             initLoadingAnimation();
+
             // Initialize achievements and leaderboard
             initAchievements();
             initLeaderboard();
+
             // Initialize game stats
             initGameStats();
+
             // Initialize particle effects
             initParticleEffects();
+
             // Add click effect to desktop
             desktop.addEventListener('click', createClickEffect);
         }
+
         // Initialize loading animation
         function initLoadingAnimation() {
             const loadingAnimation = document.getElementById('loading-animation');
@@ -2662,72 +2946,93 @@
             const centerY = window.innerHeight / 2;
             const numOrbs = 30;
             const maxDistance = Math.min(window.innerWidth, window.innerHeight) * 0.4;
+
             for (let i = 0; i < numOrbs; i++) {
                 const orb = document.createElement('div');
                 orb.className = 'orb';
+
                 // Random starting position
                 const angle = Math.random() * Math.PI * 2;
                 const distance = Math.random() * maxDistance;
                 const startX = centerX + Math.cos(angle) * distance;
                 const startY = centerY + Math.sin(angle) * distance;
+
                 orb.style.left = `${startX}px`;
                 orb.style.top = `${startY}px`;
+
                 // Random animation properties
                 const duration = 5 + Math.random() * 10;
                 const delay = Math.random() * 2;
                 const size = 5 + Math.random() * 10;
+
                 orb.style.width = `${size}px`;
                 orb.style.height = `${size}px`;
+
                 // Random color
                 const colors = ['#0078d7', '#0099ff', '#ffb900', '#107c10', '#e81123'];
                 const color = colors[Math.floor(Math.random() * colors.length)];
+
                 orb.style.backgroundColor = color;
+
                 // Animation
                 orb.style.animation = `orbMove ${duration}s ${delay}s infinite ease-in-out`;
+
                 loadingAnimation.appendChild(orb);
             }
         }
+
         // Initialize AI chat
         function initAIChat() {
             const sendButton = document.getElementById("ai-chat-send");
             const chatInput = document.getElementById('ai-chat-textarea');
             const chatbox = document.getElementById('ai-chat-content');
+
             async function displayMessage(message, isUser) {
                 const msgElem = document.createElement('div');
                 msgElem.textContent = message;
                 msgElem.className = `ai-message ${isUser ? 'user-message' : 'assistant-message'}`;
                 chatbox.appendChild(msgElem);
                 chatbox.scrollTop = chatbox.scrollHeight;
+
                 if (!isUser) {
                     msgElem.style.opacity = 0;
                     await new Promise(resolve => setTimeout(resolve, 300));
                     msgElem.style.opacity = 1;
                 }
             }
+
             async function callApi(apiUrl, prompt) {
                 chatInput.value = "Typing...";
                 chatInput.disabled = true;
                 sendButton.disabled = true;
+
                 const response = await fetch(apiUrl, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({prompt})
                 });
+
                 chatInput.value = "";
                 chatInput.disabled = false;
                 sendButton.disabled = false;
                 chatInput.focus();
+
                 return response.json();
             }
+
             chatInput.focus();
+
             sendButton.addEventListener('click', async () => {
                 const message = chatInput.value.trim();
                 if (!message) return;
+
                 displayMessage(message, true);
                 chatInput.value = '';
-                const apiUrl = message.startsWith('/image') ?
-                    'https://backend.buildpicoapps.com/aero/run/image-generation-api?pk=v1-Z0FBQUFBQm5HUEtMSjJkakVjcF9IQ0M0VFhRQ0FmSnNDSHNYTlJSblE0UXo1Q3RBcjFPcl9YYy1OZUhteDZWekxHdWRLM1M1alNZTkJMWEhNOWd4S1NPSDBTWC12M0U2UGc9PQ==' :
-                    'https://backend.buildpicoapps.com/aero/run/llm-api?pk=v1-Z0FBQUFBQm5HUEtMSjJkakVjcF9IQ0M0VFhRQ0FmSnNDSHNYTlJSblE0UXo1Q3RBcjFPcl9YYy1OZUhteDZWekxHdWRLM1M1alNZTkJMWEhNOWd4S1NPSDBTWC12M0U2UGc9PQ==';
+
+                const apiUrl = message.startsWith('/image')
+                    ? 'https://backend.buildpicoapps.com/aero/run/image-generation-api?pk=v1-Z0FBQUFBQm5HUEtMSjJkakVjcF9IQ0M0VFhRQ0FmSnNDSHNYTlJSblE0UXo1Q3RBcjFPcl9YYy1OZUhteDZWekxHdWRLM1M1alNZTkJMWEhNOWd4S1NPSDBTWC12M0U2UGc9PQ=='
+                    : 'https://backend.buildpicoapps.com/aero/run/llm-api?pk=v1-Z0FBQUFBQm5HUEtMSjJkakVjcF9IQ0M0VFhRQ0FmSnNDSHNYTlJSblE0UXo1Q3RBcjFPcl9YYy1OZUhteDZWekxHdWRLM1M1alNZTkJMWEhNOWd4S1NPSDBTWC12M0U2UGc9PQ==';
+
                 try {
                     const data = await callApi(apiUrl, message);
                     if (data.status === 'success') {
@@ -2741,9 +3046,11 @@
                 }
             });
         }
+
         // Initialize achievements
         function initAchievements() {
             const achievementsContent = document.getElementById('achievements-content');
+
             // Sample achievements data
             const achievements = [
                 { title: 'First Steps', description: 'Play your first game.', icon: '🏆' },
@@ -2752,6 +3059,7 @@
                 { title: 'Collector', description: 'Collect all game achievements.', icon: '🎁' },
                 { title: 'Speedrunner', description: 'Complete a game in under 60 seconcds.', icon: '⏱️' }
             ];
+
             // Display achievements
             achievements.forEach(achievement => {
                 const achievementItem = document.createElement('div');
@@ -2766,9 +3074,11 @@
                 achievementsContent.appendChild(achievementItem);
             });
         }
+
         // Initialize leaderboard
         function initLeaderboard() {
             const leaderboardContent = document.getElementById('leaderboard-content');
+
             // Sample leaderboard data
             const leaderboardEntries = [
                 { rank: 1, name: 'Player1', score: 1000 },
@@ -2777,6 +3087,7 @@
                 { rank: 4, name: 'Player4', score: 850 },
                 { rank: 5, name: 'Player5', score: 800 }
             ];
+
             // Display leaderboard entries
             leaderboardEntries.forEach(entry => {
                 const leaderboardItem = document.createElement('div');
@@ -2791,16 +3102,20 @@
                 leaderboardContent.appendChild(leaderboardItem);
             });
         }
+
         // Initialize game stats
         function initGameStats() {
             const gameStatsContent = document.getElementById('game-stats-content');
+
             // Display game stats
             updateGameStatsDisplay();
         }
+
         // Update game stats display
         function updateGameStatsDisplay() {
             const gameStatsContent = document.getElementById('game-stats-content');
             gameStatsContent.innerHTML = '';
+
             // Add general stats
             const generalStats = [
                 { title: 'Total Games Played', value: gameStats.totalGamesPlayed },
@@ -2809,6 +3124,7 @@
                 { title: 'Highest Score', value: gameStats.highestScore },
                 { title: 'Average Score', value: gameStats.averageScore.toFixed(2) }
             ];
+
             generalStats.forEach(stat => {
                 const gameStatItem = document.createElement('div');
                 gameStatItem.className = 'game-stat-item';
@@ -2818,6 +3134,7 @@
                 `;
                 gameStatsContent.appendChild(gameStatItem);
             });
+
             // Add game-specific stats if available
             if (Object.keys(gameStats.gameSpecificStats).length > 0) {
                 const gameSpecificTitle = document.createElement('h3');
@@ -2825,17 +3142,20 @@
                 gameSpecificTitle.style.color = 'var(--win-white)';
                 gameSpecificTitle.style.marginTop = '20px';
                 gameStatsContent.appendChild(gameSpecificTitle);
+
                 for (const [gameId, stats] of Object.entries(gameStats.gameSpecificStats)) {
                     const game = games.find(g => g.id === gameId);
                     if (game) {
                         const gameSection = document.createElement('div');
                         gameSection.className = 'game-stat-section';
                         gameSection.style.marginTop = '15px';
+
                         const gameTitle = document.createElement('h4');
                         gameTitle.textContent = game.name;
                         gameTitle.style.color = 'var(--win-white)';
                         gameTitle.style.marginBottom = '10px';
                         gameSection.appendChild(gameTitle);
+
                         for (const [statName, statValue] of Object.entries(stats)) {
                             const gameStatItem = document.createElement('div');
                             gameStatItem.className = 'game-stat-item';
@@ -2845,11 +3165,13 @@
                             `;
                             gameSection.appendChild(gameStatItem);
                         }
+
                         gameStatsContent.appendChild(gameSection);
                     }
                 }
             }
         }
+
         // Update game stats
         function updateGameStats(gameId, score, isWin) {
             // Update general stats
@@ -2859,12 +3181,15 @@
             } else {
                 gameStats.totalLosses++;
             }
+
             if (score > gameStats.highestScore) {
                 gameStats.highestScore = score;
             }
+
             // Calculate new average score
             const totalScores = gameStats.totalGamesPlayed * gameStats.averageScore + score;
             gameStats.averageScore = totalScores / gameStats.totalGamesPlayed;
+
             // Update game-specific stats
             if (!gameStats.gameSpecificStats[gameId]) {
                 gameStats.gameSpecificStats[gameId] = {
@@ -2875,6 +3200,7 @@
                     averageScore: 0
                 };
             }
+
             const gameSpecificStats = gameStats.gameSpecificStats[gameId];
             gameSpecificStats.timesPlayed++;
             if (isWin) {
@@ -2882,32 +3208,41 @@
             } else {
                 gameSpecificStats.losses++;
             }
+
             if (score > gameSpecificStats.highestScore) {
                 gameSpecificStats.highestScore = score;
             }
+
             // Calculate new average score for this game
             const totalGameScores = gameSpecificStats.timesPlayed * gameSpecificStats.averageScore + score;
             gameSpecificStats.averageScore = totalGameScores / gameSpecificStats.timesPlayed;
+
             // Update the display if the stats menu is open
             if (document.getElementById('game-stats-menu').style.display === 'flex') {
                 updateGameStatsDisplay();
             }
         }
+
         // Simulate loading process
         function simulateLoading() {
             const loadingProgressBar = document.getElementById('loading-progress-bar');
             const loadingStatus = document.getElementById('loading-status');
             const minecraftText = document.getElementById('minecraft-text');
+
             let progress = 0;
+
             // Change Minecraft text every few seconds
             setInterval(() => {
                 const randomPhrase = minecraftPhrases[Math.floor(Math.random() * minecraftPhrases.length)];
                 minecraftText.textContent = randomPhrase;
             }, 3000);
+
             const loadingInterval = setInterval(() => {
                 progress += Math.random() * 10;
                 if (progress > 100) progress = 100;
+
                 loadingProgressBar.style.width = `${progress}%`;
+
                 // Update loading status
                 if (progress < 20) {
                     loadingStatus.textContent = "Initializing components...";
@@ -2920,10 +3255,12 @@
                 } else {
                     loadingStatus.textContent = "Finalizing setup...";
                 }
+
                 // Create bubbles effect based on loading progress
                 if (progress < 100) {
                     createBubblesEffect(progress);
                 }
+
                 if (progress >= 100) {
                     clearInterval(loadingInterval);
                     setTimeout(() => {
@@ -2933,87 +3270,110 @@
                 }
             }, 200);
         }
+
         // Create bubbles effect based on loading progress
         function createBubblesEffect(progress) {
             const numBubbles = Math.floor(progress / 2);
             const loadingAnimation = document.getElementById('loading-animation');
+
             // Clear existing bubbles
             const existingBubbles = document.querySelectorAll('.bubble');
             existingBubbles.forEach(bubble => bubble.remove());
+
             // Create new bubbles
             for (let i = 0; i < numBubbles; i++) {
                 const bubble = document.createElement('div');
                 bubble.className = 'bubble';
+
                 // Random position at the bottom of the screen
                 const x = Math.random() * window.innerWidth;
                 const y = window.innerHeight + 10;
+
                 bubble.style.left = `${x}px`;
                 bubble.style.top = `${y}px`;
+
                 // Random size
                 const size = 5 + Math.random() * 10;
                 bubble.style.width = `${size}px`;
                 bubble.style.height = `${size}px`;
+
                 // Random color (light blue)
                 bubble.style.backgroundColor = `rgba(173, 216, 230, ${Math.random() * 0.5 + 0.5})`;
+
                 // Animation properties based on loading progress
                 const duration = 5 + Math.random() * 10;
                 const delay = Math.random() * 5;
                 const tx = (Math.random() - 0.5) * 50;
                 const ty = -100 - Math.random() * 500;
+
                 bubble.style.setProperty('--tx', tx);
                 bubble.style.setProperty('--ty', ty);
+
                 // Adjust spin speed based on loading progress
                 const spinSpeed = 1 + (progress / 100) * 5;
                 bubble.style.animation = `particleMove ${duration}s ${delay}s ease-out forwards, spin ${spinSpeed}s linear infinite`;
+
                 loadingAnimation.appendChild(bubble);
+
                 // Remove bubble after animation
                 setTimeout(() => {
                     bubble.remove();
                 }, (duration + delay) * 1000);
             }
         }
+
         // Start the game with transition effect
         function startGameTransition() {
             // Hide the minecraft menu
             document.getElementById('minecraft-menu').style.display = 'none';
+
             // Show the neon light sign
             const neonLight = document.getElementById('neon-light');
             neonLight.style.display = 'block';
+
             // After 3 seconds, show the bulb break effect and flash
             setTimeout(() => {
                 // Hide the neon light
                 neonLight.style.display = 'none';
+
                 // Show the bulb break effect
                 const bulbBreak = document.getElementById('light-bulb-break');
                 bulbBreak.style.display = 'block';
+
                 // Show the flash effect
                 const flash = document.getElementById('flash');
                 flash.style.display = 'block';
+
                 // After the animation completes, hide everything and show the desktop
                 setTimeout(() => {
                     bulbBreak.style.display = 'none';
                     flash.style.display = 'none';
+
                     // Show the desktop
                     document.getElementById('desktop').style.display = 'block';
                     document.getElementById('taskbar').style.display = 'flex';
                 }, 500);
             }, 3000);
         }
+
         // Start the game (show desktop)
         function startGame() {
             document.getElementById('minecraft-menu').style.display = 'none';
             document.getElementById('desktop').style.display = 'block';
             document.getElementById('taskbar').style.display = 'flex';
         }
+
         // Toggle start menu
         function toggleStartMenu() {
             const startMenu = document.getElementById('start-menu');
             startMenu.style.display = startMenu.style.display === 'flex' ? 'none' : 'flex';
         }
+
         // Hide start menu
         function hideStartMenu() {
             document.getElementById('start-menu').style.display = 'none';
         }
+
         // Toggle search bar
         function toggleSearchBar() {
             const searchBar = document.getElementById('search-bar');
@@ -3022,10 +3382,12 @@
                 document.getElementById('search-input').focus();
             }
         }
+
         // Hide search bar
         function hideSearchBar() {
             document.getElementById('search-bar').style.display = 'none';
         }
+
         // Toggle AI chat window
         function toggleAIChat() {
             const aiChatWindow = document.getElementById('ai-chat-window');
@@ -3034,95 +3396,93 @@
                 document.getElementById('ai-chat-textarea').focus();
             }
         }
+
         // Hide AI chat window
         function hideAIChat() {
             document.getElementById('ai-chat-window').style.display = 'none';
         }
+
         // Show achievements menu
         function showAchievements() {
             document.getElementById('achievements-menu').style.display = 'flex';
             hideStartMenu();
         }
+
         // Hide achievements menu
         function hideAchievements() {
             document.getElementById('achievements-menu').style.display = 'none';
         }
+
         // Show leaderboard menu
         function showLeaderboard() {
             document.getElementById('leaderboard-menu').style.display = 'flex';
             hideStartMenu();
         }
+
         // Hide leaderboard menu
         function hideLeaderboard() {
             document.getElementById('leaderboard-menu').style.display = 'none';
         }
+
         // Show game stats menu
         function showGameStats() {
             document.getElementById('game-stats-menu').style.display = 'flex';
             updateGameStatsDisplay();
             hideStartMenu();
         }
+
         // Hide game stats menu
         function hideGameStats() {
             document.getElementById('game-stats-menu').style.display = 'none';
         }
+
         // Show user profile screen
         function showUserProfile() {
             document.getElementById('user-profile-screen').style.display = 'flex';
             hideStartMenu();
         }
+
         // Hide user profile screen
         function hideUserProfile() {
             document.getElementById('user-profile-screen').style.display = 'none';
         }
+
         // Show community screen
         function showCommunity() {
             document.getElementById('community-screen').style.display = 'flex';
             hideStartMenu();
             updateCommunityPosts();
         }
+
         // Hide community screen
         function hideCommunity() {
             document.getElementById('community-screen').style.display = 'none';
         }
+
         // Show analytics screen
         function showAnalytics() {
             document.getElementById('analytics-screen').style.display = 'flex';
             hideStartMenu();
             updateAnalytics();
         }
+
         // Hide analytics screen
         function hideAnalytics() {
             document.getElementById('analytics-screen').style.display = 'none';
         }
+
         // Update community posts
         function updateCommunityPosts() {
             const communityPostsContainer = document.getElementById('community-posts');
             communityPostsContainer.innerHTML = '';
+
             // Sample community posts data
             const samplePosts = [
-                {
-                    user: 'LadiesMan217',
-                    time: '2 hours ago',
-                    content: 'im lowkirky gay asf',
-                    likes: 15,
-                    comments: 3
-                },
-                {
-                    user: 'NoobMaster69',
-                    time: '5 hours ago',
-                    content: 'Anyone else playing Rivals right now? I need a team for the next match.',
-                    likes: 8,
-                    comments: 2
-                },
-                {
-                    user: 'BarfbagX2',
-                    time: '1 day ago',
-                    content: 'gforce now emulator coming soon trust',
-                    likes: 22,
-                    comments: 5
-                }
+                { user: 'LadiesMan217', time: '2 hours ago', content: 'im lowkirky gay asf', likes: 15, comments: 3 },
+                { user: 'NoobMaster69', time: '5 hours ago', content: 'Anyone else playing Rivals right now? I need a team for the next match.', likes: 8, comments: 2 },
+                { user: 'BarfbagX2', time: '1 day ago', content: 'gforce now emulator coming soon trust', likes: 22, comments: 5 }
             ];
+
             // Display community posts
             samplePosts.forEach(post => {
                 const postElement = document.createElement('div');
@@ -3148,6 +3508,7 @@
                 communityPostsContainer.appendChild(postElement);
             });
         }
+
         // Create a new community post
         function createPost() {
             const postContent = document.getElementById('post-content').value.trim();
@@ -3159,11 +3520,13 @@
                     likes: 0,
                     comments: 0
                 };
+
                 communityPosts.unshift(newPost);
                 updateCommunityPosts();
                 document.getElementById('post-content').value = '';
             }
         }
+
         // Update analytics
         function updateAnalytics() {
             // Sample analytics data
@@ -3173,15 +3536,18 @@
                 favoriteGame: 'Geometry Dash',
                 mostPlayedGame: 'Ultrakill'
             };
+
             // Update analytics display
             document.getElementById('total-games-played').textContent = analyticsData.totalGamesPlayed;
             document.getElementById('total-playtime').textContent = `${analyticsData.totalPlaytime} hours`;
             document.getElementById('favorite-game').textContent = analyticsData.favoriteGame;
             document.getElementById('most-played-game').textContent = analyticsData.mostPlayedGame;
+
             // Update charts (in a real app, you would use a library like Chart.js)
             document.getElementById('game-playtime-chart').textContent = 'Game Playtime Chart (Placeholder)';
             document.getElementById('game-preferences-chart').textContent = 'Game Preferences Chart (Placeholder)';
         }
+
         // Open a game in a new window
         function openGame(game) {
             // Create a new window
@@ -3193,6 +3559,7 @@
             windowElement.style.height = '600px';
             windowElement.style.left = `${Math.random() * (window.innerWidth - 800)}px`;
             windowElement.style.top = `${Math.random() * (window.innerHeight - 640)}px`;
+
             // Create window header
             const windowHeader = document.createElement('div');
             windowHeader.className = 'window-header';
@@ -3204,6 +3571,7 @@
                     <div class="window-control window-control-close">×</div>
                 </div>
             `;
+
             // Create window content
             const windowContent = document.createElement('div');
             windowContent.className = 'window-content';
@@ -3212,10 +3580,12 @@
             iframe.src = game.url;
             iframe.allowFullscreen = true;
             windowContent.appendChild(iframe);
+
             // Assemble the window
             windowElement.appendChild(windowHeader);
             windowElement.appendChild(windowContent);
             document.body.appendChild(windowElement);
+
             // Add to windows array
             windows.push({
                 id: windowId,
@@ -3223,28 +3593,37 @@
                 game: game,
                 zIndex: zIndexCounter++
             });
+
             // Bring to front
             bringToFront(windowId);
+
             // Make draggable
             makeDraggable(windowElement, windowHeader);
+
             // Add to taskbar
             addToTaskbar(game);
+
             // Add event listeners for window controls
             const minimizeButton = windowHeader.querySelector('.window-control-minimize');
             const maximizeButton = windowHeader.querySelector('.window-control-maximize');
             const closeButton = windowHeader.querySelector('.window-control-close');
+
             minimizeButton.addEventListener('click', () => minimizeWindow(windowId));
             maximizeButton.addEventListener('click', () => maximizeWindow(windowId));
             closeButton.addEventListener('click', () => closeWindow(windowId));
+
             // Show the window
             windowElement.style.display = 'flex';
+
             // Create particle effect
             createParticleEffect(windowElement);
+
             // Simulate game stats update (in a real app, this would be based on actual game events)
             const score = Math.floor(Math.random() * 1000) + 1;
             const isWin = Math.random() > 0.5;
             updateGameStats(game.id, score, isWin);
         }
+
         // Bring window to front
         function bringToFront(windowId) {
             const windowObj = windows.find(w => w.id === windowId);
@@ -3253,10 +3632,12 @@
                 windowObj.element.style.zIndex = windowObj.zIndex;
             }
         }
+
         // Make window draggable
         function makeDraggable(windowElement, headerElement) {
             let isDragging = false;
             let offsetX, offsetY;
+
             headerElement.addEventListener('mousedown', (e) => {
                 isDragging = true;
                 offsetX = e.clientX - windowElement.getBoundingClientRect().left;
@@ -3264,16 +3645,19 @@
                 bringToFront(windowElement.id);
                 e.preventDefault();
             });
+
             document.addEventListener('mousemove', (e) => {
                 if (isDragging) {
                     windowElement.style.left = `${e.clientX - offsetX}px`;
                     windowElement.style.top = `${e.clientY - offsetY}px`;
                 }
             });
+
             document.addEventListener('mouseup', () => {
                 isDragging = false;
             });
         }
+
         // Add game to taskbar
         function addToTaskbar(game) {
             const taskbarItems = document.getElementById('taskbar-items');
@@ -3281,6 +3665,7 @@
             taskbarItem.className = 'taskbar-item';
             taskbarItem.textContent = game.name;
             taskbarItem.dataset.gameId = game.id;
+
             taskbarItem.addEventListener('click', () => {
                 const windowObj = windows.find(w => w.game.id === game.id);
                 if (windowObj) {
@@ -3290,8 +3675,10 @@
                     bringToFront(windowObj.id);
                 }
             });
+
             taskbarItems.appendChild(taskbarItem);
         }
+
         // Minimize window
         function minimizeWindow(windowId) {
             const windowObj = windows.find(w => w.id === windowId);
@@ -3299,6 +3686,7 @@
                 windowObj.element.style.display = 'none';
             }
         }
+
         // Maximize window
         function maximizeWindow(windowId) {
             const windowObj = windows.find(w => w.id === windowId);
@@ -3318,94 +3706,118 @@
                 }
             }
         }
+
         // Close window
         function closeWindow(windowId) {
             const windowIndex = windows.findIndex(w => w.id === windowId);
             if (windowIndex !== -1) {
                 const windowObj = windows[windowIndex];
                 windowObj.element.remove();
+
                 // Remove from taskbar
                 const taskbarItem = document.querySelector(`.taskbar-item[data-game-id="${windowObj.game.id}"]`);
                 if (taskbarItem) {
                     taskbarItem.remove();
                 }
+
                 // Remove from windows array
                 windows.splice(windowIndex, 1);
             }
         }
+
         // Create particle effect
         function createParticleEffect(element) {
             const rect = element.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
+
             for (let i = 0; i < parseInt(getComputedStyle(document.documentElement).getPropertyValue('--particle-count')); i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
+
                 // Set particle color from CSS variable
                 const particleColor = getComputedStyle(document.documentElement).getPropertyValue('--particle-color');
                 particle.style.backgroundColor = particleColor;
+
                 // Set particle size from CSS variable
                 const particleSize = getComputedStyle(document.documentElement).getPropertyValue('--particle-size');
                 particle.style.width = particleSize;
                 particle.style.height = particleSize;
+
                 // Random position around the window
                 const angle = Math.random() * Math.PI * 2;
                 const distance = Math.random() * 100 + 50;
                 const x = centerX + Math.cos(angle) * distance;
                 const y = centerY + Math.sin(angle) * distance;
+
                 particle.style.left = `${x}px`;
                 particle.style.top = `${y}px`;
+
                 // Random animation properties
                 const duration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--particle-speed'));
                 const delay = Math.random() * 0.5;
                 const tx = (Math.random() - 0.5) * 200;
                 const ty = (Math.random() - 0.5) * 200;
+
                 particle.style.setProperty('--tx', tx);
                 particle.style.setProperty('--ty', ty);
                 particle.style.animation = `particleMove ${duration}s ${delay}s ease-out forwards`;
+
                 document.body.appendChild(particle);
+
                 // Remove particle after animation
                 setTimeout(() => {
                     particle.remove();
                 }, (duration + delay) * 1000);
             }
         }
+
         // Create click effect
         function createClickEffect(e) {
             const clickEffect = document.createElement('div');
             clickEffect.className = 'particle';
+
             // Set particle color from CSS variable
             const particleColor = getComputedStyle(document.documentElement).getPropertyValue('--particle-color');
             clickEffect.style.backgroundColor = particleColor;
+
             // Set particle size from CSS variable
             const particleSize = getComputedStyle(document.documentElement).getPropertyValue('--particle-size');
             clickEffect.style.width = particleSize;
             clickEffect.style.height = particleSize;
+
             // Position at click location
             clickEffect.style.left = `${e.clientX}px`;
             clickEffect.style.top = `${e.clientY}px`;
+
             // Random animation properties
             const duration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--particle-speed'));
             const delay = 0;
             const tx = (Math.random() - 0.5) * 200;
             const ty = (Math.random() - 0.5) * 200;
+
             clickEffect.style.setProperty('--tx', tx);
             clickEffect.style.setProperty('--ty', ty);
             clickEffect.style.animation = `particleMove ${duration}s ${delay}s ease-out forwards`;
+
             document.body.appendChild(clickEffect);
+
             // Remove particle after animation
             setTimeout(() => {
                 clickEffect.remove();
             }, duration * 1000);
         }
+
         // Initialize particle effects
         function initParticleEffects() {
             // Add event listener for desktop clicks
             document.getElementById('desktop').addEventListener('click', createClickEffect);
         }
+
         // Change theme
         function changeTheme(theme) {
             const root = document.documentElement;
+
             switch (theme) {
                 case 'dark':
                     root.style.setProperty('--bg', '#0a0a0a');
@@ -3462,12 +3874,15 @@
                     root.style.setProperty('--win-white', '#e1e1e1');
                     break;
             }
+
             // Update window styles
             updateWindowStyles();
         }
+
         // Change desktop background
         function changeDesktopBackground(background) {
             const desktop = document.getElementById('desktop');
+
             switch (background) {
                 case 'default':
                     desktop.style.background = 'url(\'https://i.imgur.com/windows-bg.jpg\') no-repeat center center';
@@ -3494,9 +3909,11 @@
                     break;
             }
         }
+
         // Change window style
         function changeWindowStyle(style) {
             const root = document.documentElement;
+
             switch (style) {
                 case 'default':
                     root.style.setProperty('--window-bg', '#2d2d2d');
@@ -3523,32 +3940,39 @@
                     // In a real application, you would have input fields for custom colors
                     break;
             }
+
             // Update window styles
             updateWindowStyles();
         }
+
         // Update window styles
         function updateWindowStyles() {
             const windows = document.querySelectorAll('.window');
             windows.forEach(window => {
                 window.style.background = getComputedStyle(document.documentElement).getPropertyValue('--window-bg');
                 window.style.border = getComputedStyle(document.documentElement).getPropertyValue('--window-border');
+
                 const windowHeader = window.querySelector('.window-header');
                 if (windowHeader) {
                     windowHeader.style.background = getComputedStyle(document.documentElement).getPropertyValue('--window-header-bg');
                     windowHeader.style.color = getComputedStyle(document.documentElement).getPropertyValue('--window-header-text');
                 }
+
                 const windowContent = window.querySelector('.window-content');
                 if (windowContent) {
                     windowContent.style.background = getComputedStyle(document.documentElement).getPropertyValue('--window-content-bg');
                 }
             });
         }
+
         // Change particle effect
         function changeParticleEffect(effect) {
             // Clear any existing particle effects
             clearParticleEffects();
+
             // Set the current particle effect
             currentParticleEffect = effect;
+
             // Apply the selected particle effect
             switch (effect) {
                 case 'none':
@@ -3579,52 +4003,67 @@
                     break;
             }
         }
+
         // Clear particle effects
         function clearParticleEffects() {
             // Remove all existing particles
             const particles = document.querySelectorAll('.particle, .snowflake, .confetti, .firework, .bubble, .star, .heart');
             particles.forEach(particle => particle.remove());
+
             // Clear any intervals or timeouts related to particle effects
             // (In a real application, you would track these)
         }
+
         // Create fireworks effect
         function createFireworksEffect() {
             const numFireworks = 10;
+
             const fireworkInterval = setInterval(() => {
                 if (currentParticleEffect !== 'fireworks') {
                     clearInterval(fireworkInterval);
                     return;
                 }
+
                 for (let i = 0; i < numFireworks; i++) {
                     setTimeout(() => {
                         const firework = document.createElement('div');
                         firework.className = 'particle';
+
                         // Random position at the bottom of the screen
                         const x = Math.random() * window.innerWidth;
                         const y = window.innerHeight;
+
                         firework.style.left = `${x}px`;
                         firework.style.top = `${y}px`;
+
                         // Random color
                         const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
                         const color = colors[Math.floor(Math.random() * colors.length)];
+
                         firework.style.backgroundColor = color;
+
                         // Random size
                         const size = 5 + Math.random() * 10;
                         firework.style.width = `${size}px`;
                         firework.style.height = `${size}px`;
+
                         // Animation properties
                         const duration = 1 + Math.random() * 2;
                         const delay = Math.random() * 2;
                         const tx = (Math.random() - 0.5) * 500;
                         const ty = -100 - Math.random() * 500;
+
                         firework.style.setProperty('--tx', tx);
                         firework.style.setProperty('--ty', ty);
                         firework.style.animation = `particleMove ${duration}s ${delay}s ease-out forwards`;
+
                         document.body.appendChild(firework);
+
                         // Remove firework after animation
                         setTimeout(() => {
                             firework.remove();
                         }, (duration + delay) * 1000);
+
                         // Create explosion particles
                         setTimeout(() => {
                             createFireworkExplosion(x, y - 100 - Math.random() * 500, color);
@@ -3633,20 +4072,26 @@
                 }
             }, 3000);
         }
+
         // Create firework explosion
         function createFireworkExplosion(x, y, color) {
             const numParticles = 50;
+
             for (let i = 0; i < numParticles; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
+
                 particle.style.left = `${x}px`;
                 particle.style.top = `${y}px`;
+
                 // Use the firework color
                 particle.style.backgroundColor = color;
+
                 // Random size
                 const size = 3 + Math.random() * 5;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
+
                 // Animation properties
                 const duration = 1 + Math.random() * 2;
                 const delay = 0;
@@ -3654,340 +4099,449 @@
                 const distance = 50 + Math.random() * 200;
                 const tx = Math.cos(angle) * distance;
                 const ty = Math.sin(angle) * distance;
+
                 particle.style.setProperty('--tx', tx);
                 particle.style.setProperty('--ty', ty);
                 particle.style.animation = `particleMove ${duration}s ${delay}s ease-out forwards`;
+
                 document.body.appendChild(particle);
+
                 // Remove particle after animation
                 setTimeout(() => {
                     particle.remove();
                 }, duration * 1000);
             }
         }
+
         // Create snow effect
         function createSnowEffect() {
             const numSnowflakes = 50;
+
             for (let i = 0; i < numSnowflakes; i++) {
                 const snowflake = document.createElement('div');
                 snowflake.className = 'snowflake';
+
                 // Random position at the top of the screen
                 const x = Math.random() * window.innerWidth;
                 const y = -10;
+
                 snowflake.style.left = `${x}px`;
                 snowflake.style.top = `${y}px`;
+
                 // Random size
                 const size = 5 + Math.random() * 10;
                 snowflake.style.width = `${size}px`;
                 snowflake.style.height = `${size}px`;
+
                 // Random animation duration
                 const duration = 10 + Math.random() * 20;
                 snowflake.style.animationDuration = `${duration}s`;
+
                 // Random animation delay
                 const delay = Math.random() * 5;
                 snowflake.style.animationDelay = `${delay}s`;
+
                 document.body.appendChild(snowflake);
+
                 // Remove snowflake after animation
                 setTimeout(() => {
                     snowflake.remove();
                 }, (duration + delay) * 1000);
             }
+
             // Continuously add new snowflakes
             setInterval(() => {
                 if (currentParticleEffect !== 'snow') return;
+
                 const snowflake = document.createElement('div');
                 snowflake.className = 'snowflake';
+
                 // Random position at the top of the screen
                 const x = Math.random() * window.innerWidth;
                 const y = -10;
+
                 snowflake.style.left = `${x}px`;
                 snowflake.style.top = `${y}px`;
+
                 // Random size
                 const size = 5 + Math.random() * 10;
                 snowflake.style.width = `${size}px`;
                 snowflake.style.height = `${size}px`;
+
                 // Random animation duration
                 const duration = 10 + Math.random() * 20;
                 snowflake.style.animationDuration = `${duration}s`;
+
                 // No delay for continuous snowfall
                 snowflake.style.animationDelay = '0s';
+
                 document.body.appendChild(snowflake);
+
                 // Remove snowflake after animation
                 setTimeout(() => {
                     snowflake.remove();
                 }, duration * 1000);
             }, 500);
         }
+
         // Create confetti effect
         function createConfettiEffect() {
             const numConfetti = 100;
             const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ff8800', '#88ff00', '#0088ff'];
+
             for (let i = 0; i < numConfetti; i++) {
                 setTimeout(() => {
                     if (currentParticleEffect !== 'confetti') return;
+
                     const confetti = document.createElement('div');
                     confetti.className = 'confetti';
+
                     // Random position at the top of the screen
                     const x = Math.random() * window.innerWidth;
                     const y = -10;
+
                     confetti.style.left = `${x}px`;
                     confetti.style.top = `${y}px`;
+
                     // Random color
                     const color = colors[Math.floor(Math.random() * colors.length)];
                     confetti.style.backgroundColor = color;
+
                     // Random size
                     const size = 5 + Math.random() * 10;
                     confetti.style.width = `${size}px`;
                     confetti.style.height = `${size}px`;
+
                     // Animation properties
                     const duration = 3 + Math.random() * 5;
                     const delay = Math.random() * 2;
                     const tx = (Math.random() - 0.5) * 500;
                     const ty = 100 + Math.random() * 500;
+
                     confetti.style.setProperty('--tx', tx);
                     confetti.style.setProperty('--ty', ty);
                     confetti.style.animation = `confettiFall ${duration}s ${delay}s ease-out forwards`;
+
                     // Random rotation
                     const rotation = Math.random() * 360;
                     confetti.style.transform = `rotate(${rotation}deg)`;
+
                     document.body.appendChild(confetti);
+
                     // Remove confetti after animation
                     setTimeout(() => {
                         confetti.remove();
                     }, (duration + delay) * 1000);
                 }, i * 50);
             }
+
             // Continuously add new confetti
             setInterval(() => {
                 if (currentParticleEffect !== 'confetti') return;
+
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
+
                 // Random position at the top of the screen
                 const x = Math.random() * window.innerWidth;
                 const y = -10;
+
                 confetti.style.left = `${x}px`;
                 confetti.style.top = `${y}px`;
+
                 // Random color
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 confetti.style.backgroundColor = color;
+
                 // Random size
                 const size = 5 + Math.random() * 10;
                 confetti.style.width = `${size}px`;
                 confetti.style.height = `${size}px`;
+
                 // Animation properties
                 const duration = 3 + Math.random() * 5;
                 const delay = 0;
                 const tx = (Math.random() - 0.5) * 500;
                 const ty = 100 + Math.random() * 500;
+
                 confetti.style.setProperty('--tx', tx);
                 confetti.style.setProperty('--ty', ty);
                 confetti.style.animation = `confettiFall ${duration}s ${delay}s ease-out forwards`;
+
                 // Random rotation
                 const rotation = Math.random() * 360;
                 confetti.style.transform = `rotate(${rotation}deg)`;
+
                 document.body.appendChild(confetti);
+
                 // Remove confetti after animation
                 setTimeout(() => {
                     confetti.remove();
                 }, duration * 1000);
             }, 200);
         }
+
         // Create bubbles effect
         function createBubblesEffect() {
             const numBubbles = 50;
+
             for (let i = 0; i < numBubbles; i++) {
                 const bubble = document.createElement('div');
                 bubble.className = 'bubble';
+
                 // Random position at the bottom of the screen
                 const x = Math.random() * window.innerWidth;
                 const y = window.innerHeight + 10;
+
                 bubble.style.left = `${x}px`;
                 bubble.style.top = `${y}px`;
+
                 // Random size
                 const size = 5 + Math.random() * 10;
                 bubble.style.width = `${size}px`;
                 bubble.style.height = `${size}px`;
+
                 // Random color (light blue)
                 bubble.style.backgroundColor = `rgba(173, 216, 230, ${Math.random() * 0.5 + 0.5})`;
+
                 // Animation properties
                 const duration = 5 + Math.random() * 10;
                 const delay = Math.random() * 5;
                 const tx = (Math.random() - 0.5) * 50;
                 const ty = -100 - Math.random() * 500;
+
                 bubble.style.setProperty('--tx', tx);
                 bubble.style.setProperty('--ty', ty);
                 bubble.style.animation = `particleMove ${duration}s ${delay}s ease-out forwards`;
+
                 document.body.appendChild(bubble);
+
                 // Remove bubble after animation
                 setTimeout(() => {
                     bubble.remove();
                 }, (duration + delay) * 1000);
             }
+
             // Continuously add new bubbles
             setInterval(() => {
                 if (currentParticleEffect !== 'bubbles') return;
+
                 const bubble = document.createElement('div');
                 bubble.className = 'bubble';
+
                 // Random position at the bottom of the screen
                 const x = Math.random() * window.innerWidth;
                 const y = window.innerHeight + 10;
+
                 bubble.style.left = `${x}px`;
                 bubble.style.top = `${y}px`;
+
                 // Random size
                 const size = 5 + Math.random() * 10;
                 bubble.style.width = `${size}px`;
                 bubble.style.height = `${size}px`;
+
                 // Random color (light blue)
                 bubble.style.backgroundColor = `rgba(173, 216, 230, ${Math.random() * 0.5 + 0.5})`;
+
                 // Animation properties
                 const duration = 5 + Math.random() * 10;
                 const delay = 0;
                 const tx = (Math.random() - 0.5) * 50;
                 const ty = -100 - Math.random() * 500;
+
                 bubble.style.setProperty('--tx', tx);
                 bubble.style.setProperty('--ty', ty);
                 bubble.style.animation = `particleMove ${duration}s ${delay}s ease-out forwards`;
+
                 document.body.appendChild(bubble);
+
                 // Remove bubble after animation
                 setTimeout(() => {
                     bubble.remove();
                 }, duration * 1000);
             }, 300);
         }
+
         // Create stars effect
         function createStarsEffect() {
             const numStars = 50;
+
             for (let i = 0; i < numStars; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
+
                 // Random position on the screen
                 const x = Math.random() * window.innerWidth;
                 const y = Math.random() * window.innerHeight;
+
                 star.style.left = `${x}px`;
                 star.style.top = `${y}px`;
+
                 // Random size
                 const size = 2 + Math.random() * 5;
                 star.style.width = `${size}px`;
                 star.style.height = `${size}px`;
+
                 // Random color (yellow or white)
                 const color = Math.random() > 0.5 ? '#ffff00' : '#ffffff';
                 star.style.backgroundColor = color;
+
                 // Random animation duration
                 const duration = 2 + Math.random() * 5;
                 star.style.animationDuration = `${duration}s`;
+
                 // Random animation delay
                 const delay = Math.random() * 5;
                 star.style.animationDelay = `${delay}s`;
+
                 document.body.appendChild(star);
+
                 // Remove star after animation
                 setTimeout(() => {
                     star.remove();
                 }, (duration + delay) * 1000);
             }
+
             // Continuously add new stars
             setInterval(() => {
                 if (currentParticleEffect !== 'stars') return;
+
                 const star = document.createElement('div');
                 star.className = 'star';
+
                 // Random position on the screen
                 const x = Math.random() * window.innerWidth;
                 const y = Math.random() * window.innerHeight;
+
                 star.style.left = `${x}px`;
                 star.style.top = `${y}px`;
+
                 // Random size
                 const size = 2 + Math.random() * 5;
                 star.style.width = `${size}px`;
                 star.style.height = `${size}px`;
+
                 // Random color (yellow or white)
                 const color = Math.random() > 0.5 ? '#ffff00' : '#ffffff';
                 star.style.backgroundColor = color;
+
                 // Random animation duration
                 const duration = 2 + Math.random() * 5;
                 star.style.animationDuration = `${duration}s`;
+
                 // No delay for continuous stars
                 star.style.animationDelay = '0s';
+
                 document.body.appendChild(star);
+
                 // Remove star after animation
                 setTimeout(() => {
                     star.remove();
                 }, duration * 1000);
             }, 200);
         }
+
         // Create hearts effect
         function createHeartsEffect() {
             const numHearts = 30;
+
             for (let i = 0; i < numHearts; i++) {
                 setTimeout(() => {
                     if (currentParticleEffect !== 'hearts') return;
+
                     const heart = document.createElement('div');
                     heart.className = 'heart';
+
                     // Random position at the top of the screen
                     const x = Math.random() * window.innerWidth;
                     const y = -10;
+
                     heart.style.left = `${x}px`;
                     heart.style.top = `${y}px`;
+
                     // Random size
                     const size = 10 + Math.random() * 20;
                     heart.style.width = `${size}px`;
                     heart.style.height = `${size}px`;
+
                     // Random color (red or pink)
                     const color = Math.random() > 0.5 ? '#ff0000' : '#ff66b2';
                     heart.style.backgroundColor = color;
+
                     // Animation properties
                     const duration = 3 + Math.random() * 5;
                     const delay = Math.random() * 2;
                     const tx = (Math.random() - 0.5) * 200;
                     const ty = 100 + Math.random() * 500;
+
                     heart.style.setProperty('--tx', tx);
                     heart.style.setProperty('--ty', ty);
                     heart.style.animation = `particleMove ${duration}s ${delay}s ease-out forwards`;
+
                     // Random rotation
                     const rotation = Math.random() * 360;
                     heart.style.transform = `rotate(${rotation}deg)`;
+
                     document.body.appendChild(heart);
+
                     // Remove heart after animation
                     setTimeout(() => {
                         heart.remove();
                     }, (duration + delay) * 1000);
                 }, i * 100);
             }
+
             // Continuously add new hearts
             setInterval(() => {
                 if (currentParticleEffect !== 'hearts') return;
+
                 const heart = document.createElement('div');
                 heart.className = 'heart';
+
                 // Random position at the top of the screen
                 const x = Math.random() * window.innerWidth;
                 const y = -10;
+
                 heart.style.left = `${x}px`;
                 heart.style.top = `${y}px`;
+
                 // Random size
                 const size = 10 + Math.random() * 20;
                 heart.style.width = `${size}px`;
                 heart.style.height = `${size}px`;
+
                 // Random color (red or pink)
                 const color = Math.random() > 0.5 ? '#ff0000' : '#ff66b2';
                 heart.style.backgroundColor = color;
+
                 // Animation properties
                 const duration = 3 + Math.random() * 5;
                 const delay = 0;
                 const tx = (Math.random() - 0.5) * 200;
                 const ty = 100 + Math.random() * 500;
+
                 heart.style.setProperty('--tx', tx);
                 heart.style.setProperty('--ty', ty);
                 heart.style.animation = `particleMove ${duration}s ${delay}s ease-out forwards`;
+
                 // Random rotation
                 const rotation = Math.random() * 360;
                 heart.style.transform = `rotate(${rotation}deg)`;
+
                 document.body.appendChild(heart);
+
                 // Remove heart after animation
                 setTimeout(() => {
                     heart.remove();
                 }, duration * 1000);
             }, 500);
         }
+
         // Update particle settings
         function updateParticleSettings() {
             const root = document.documentElement;
+
             // Update CSS variables based on input values
             root.style.setProperty('--particle-color', document.getElementById('particle-color').value);
             root.style.setProperty('--particle-size', `${document.getElementById('particle-size').value}px`);
@@ -3995,49 +4549,59 @@
             root.style.setProperty('--particle-speed', `${document.getElementById('particle-speed').value}s`);
             root.style.setProperty('--particle-opacity', document.getElementById('particle-opacity').value);
         }
+
         // Show settings screen from menu
         function showSettingsFromMenu() {
             document.getElementById('minecraft-menu').style.display = 'none';
             document.getElementById('settings-screen').style.display = 'flex';
         }
+
         // Show settings screen
         function showSettings() {
             document.getElementById('settings-screen').style.display = 'flex';
             hideStartMenu();
         }
+
         // Hide settings screen
         function hideSettings() {
             document.getElementById('settings-screen').style.display = 'none';
             document.getElementById('minecraft-menu').style.display = 'flex';
         }
+
         // Show credits screen from menu
         function showCreditsFromMenu() {
             document.getElementById('minecraft-menu').style.display = 'none';
             document.getElementById('credits-screen').style.display = 'flex';
         }
+
         // Show credits screen
         function showCredits() {
             document.getElementById('credits-screen').style.display = 'flex';
             hideStartMenu();
         }
+
         // Hide credits screen
         function hideCredits() {
             document.getElementById('credits-screen').style.display = 'none';
             document.getElementById('minecraft-menu').style.display = 'flex';
         }
+
         // Show exit confirmation from menu
         function showExitConfirmationFromMenu() {
             document.getElementById('exit-confirmation').style.display = 'flex';
         }
+
         // Show exit confirmation
         function showExitConfirmation() {
             document.getElementById('exit-confirmation').style.display = 'flex';
             hideStartMenu();
         }
+
         // Hide exit confirmation
         function hideExitConfirmation() {
             document.getElementById('exit-confirmation').style.display = 'none';
         }
+
         // Save user profile
         function saveProfile() {
             // In a real application, you would save the profile data to a server or local storage
@@ -4053,6 +4617,7 @@
             userProfile.emailNotifications = document.getElementById('email-notifications').value;
             userProfile.pushNotifications = document.getElementById('push-notifications').value;
             userProfile.inAppNotifications = document.getElementById('in-app-notifications').value;
+
             // Handle avatar upload
             const avatarInput = document.getElementById('avatar');
             if (avatarInput.files && avatarInput.files[0]) {
@@ -4062,13 +4627,16 @@
                 };
                 reader.readAsDataURL(avatarInput.files[0]);
             }
+
             alert('Profile saved successfully!');
         }
+
         // Delete user account
         function deleteAccount() {
             // In a real application, you would delete the user account from the server
             if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
                 alert('Account deleted successfully!');
+
                 // Clear user profile data
                 userProfile = {
                     username: '',
@@ -4085,6 +4653,7 @@
                     pushNotifications: 'on',
                     inAppNotifications: 'on'
                 };
+
                 // Reset form fields
                 document.getElementById('username').value = '';
                 document.getElementById('email').value = '';
@@ -4099,20 +4668,25 @@
                 document.getElementById('email-notifications').value = 'on';
                 document.getElementById('push-notifications').value = 'on';
                 document.getElementById('in-app-notifications').value = 'on';
+
                 // Hide user profile screen
                 hideUserProfile();
             }
         }
+
         // Exit game
         function exitGame() {
             // Close all windows
             windows.forEach(windowObj => {
                 windowObj.element.remove();
             });
+
             // Clear windows array
             windows = [];
+
             // Clear taskbar items
             document.getElementById('taskbar-items').innerHTML = '';
+
             // Hide all screens
             hideSettings();
             hideCredits();
@@ -4124,26 +4698,32 @@
             hideUserProfile();
             hideCommunity();
             hideAnalytics();
+
             // Clear particle effects
             clearParticleEffects();
+
             // Show loading screen again (simulate restart)
             document.getElementById('loading-screen').style.display = 'flex';
             document.getElementById('desktop').style.display = 'none';
             document.getElementById('taskbar').style.display = 'none';
             document.getElementById('minecraft-menu').style.display = 'none';
+
             simulateLoading();
         }
+
         // Initialize the application
         document.addEventListener('DOMContentLoaded', () => {
             initDesktop();
             simulateLoading();
         });
+
         // Handle window resize
         window.addEventListener('resize', () => {
             // Reposition windows to stay visible
             windows.forEach(windowObj => {
                 const windowElement = windowObj.element;
                 const rect = windowElement.getBoundingClientRect();
+
                 // Ensure window stays within bounds
                 if (rect.right > window.innerWidth) {
                     windowElement.style.left = `${window.innerWidth - windowElement.offsetWidth}px`;
@@ -4162,4 +4742,3 @@
     </script>
 </body>
 </html>
-
