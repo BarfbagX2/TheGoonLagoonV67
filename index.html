@@ -1866,10 +1866,36 @@
             animation: spin 1s linear infinite;
             margin: 20px auto;
         }
+        /* New button style */
+        .new-tab-button {
+            background: var(--silver-gradient);
+            color: var(--win-white);
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-family: 'Minecraftia', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: var(--silver-shadow);
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            margin-left: 10px;
+        }
+        .new-tab-button:hover {
+            background: linear-gradient(135deg, #B87333, #FFD700, #C0C0C0);
+            transform: translateY(-2px);
+            box-shadow: var(--silver-shadow-hover);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+        .new-tab-button:active {
+            background: linear-gradient(135deg, #FFD700, #C0C0C0, #B87333);
+            transform: translateY(0);
+            box-shadow: var(--silver-shadow-active);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
     </style>
 </head>
 <body>
-
     <div id="loading-screen">
         <div id="loading-logo"></div>
         <div id="loading-text">Loading THE GOON LAGOON...</div>
@@ -1880,7 +1906,6 @@
         <div id="loading-status">Initializing components...</div>
         <div id="loading-animation"></div>
     </div>
-
     <div id="minecraft-menu" style="display: none;">
         <h1 id="goon-lagoon-title">THE GOON LAGOON</h1>
         <div id="minecraft-phrase">Loading...</div>
@@ -1891,22 +1916,17 @@
             <button class="minecraft-button" id="exit-button">Exit</button>
         </div>
     </div>
-
     <div id="desktop">
-
     </div>
-
     <div id="taskbar">
         <button id="start-button">Start</button>
         <div id="taskbar-items">
-
         </div>
         <div id="system-tray">
             <div class="system-tray-item" id="search-button">🔍</div>
             <div class="system-tray-item" id="ai-chat-button">🤖</div>
         </div>
     </div>
-
     <div id="start-menu">
         <div id="start-menu-header">THE GOON LAGOON</div>
         <div id="start-menu-content">
@@ -1923,21 +1943,17 @@
             </div>
         </div>
     </div>
-
     <div id="search-bar">
         <input type="text" id="search-input" placeholder="Search for games...">
         <div id="search-results">
-
         </div>
     </div>
-
     <div id="ai-chat-window">
         <div id="ai-chat-header">
             <span>*AI Assistant</span>
             <div id="ai-chat-close" onclick="hideAIChat()">×</div>
         </div>
         <div id="ai-chat-content">
-
         </div>
         <div id="ai-chat-input">
             <input id="ai-chat-textarea" type="text" placeholder="Type your message" />
@@ -1946,7 +1962,6 @@
             </button>
         </div>
     </div>
-
     <div id="settings-screen">
         <div id="settings-window">
             <div id="settings-header">
@@ -2184,7 +2199,6 @@
             </div>
         </div>
     </div>
-
     <div id="credits-screen">
         <div id="credits-window">
             <div id="credits-header">
@@ -2213,7 +2227,7 @@
                 </div>
                 <div class="credits-section">
                     <h2>Version Information</h2>
-                    <p>The GOON LAGOON - Supa Dupa Edition</p>
+                    <p>THE GOON LAGOON - Supa Dupa Edition</p>
                     <p>Version: 188.0.0</p>
                     <p>Build Date: March 2026</p>
                     <p>Copyright © 2026 BarfbagX2. All rights reserved.</p>
@@ -2221,37 +2235,30 @@
             </div>
         </div>
     </div>
-
     <div id="achievements-menu">
         <div id="achievements-header">
             <span>Achievements</span>
             <div id="achievements-close" onclick="hideAchievements()">×</div>
         </div>
         <div id="achievements-content">
-
         </div>
     </div>
-
     <div id="leaderboard-menu">
         <div id="leaderboard-header">
             <span>Leaderboard</span>
             <div id="leaderboard-close" onclick="hideLeaderboard()">×</div>
         </div>
         <div id="leaderboard-content">
-
         </div>
     </div>
-
     <div id="game-stats-menu">
         <div id="game-stats-header">
             <span>Game Stats</span>
             <div id="game-stats-close" onclick="hideGameStats()">×</div>
         </div>
         <div id="game-stats-content">
-
         </div>
     </div>
-
     <div id="user-profile-screen">
         <div id="user-profile-window">
             <div id="user-profile-header">
@@ -2358,7 +2365,6 @@
             </div>
         </div>
     </div>
-
     <div id="community-screen">
         <div id="community-window">
             <div id="community-header">
@@ -2369,7 +2375,6 @@
                 <div class="community-section">
                     <h2>Recent Posts</h2>
                     <div id="community-posts">
-
                     </div>
                 </div>
                 <div class="community-section">
@@ -2382,7 +2387,6 @@
             </div>
         </div>
     </div>
-
     <div id="analytics-screen">
         <div id="analytics-window">
             <div id="analytics-header">
@@ -2393,13 +2397,11 @@
                 <div class="analytics-section">
                     <h2>User Playtime</h2>
                     <div class="analytics-chart" id="game-playtime-chart">
-
                     </div>
                 </div>
                 <div class="analytics-section">
                     <h2>Game Preferences</h2>
                     <div class="analytics-chart" id="game-preferences-chart">
-
                     </div>
                 </div>
                 <div class="analytics-section">
@@ -2426,7 +2428,6 @@
             </div>
         </div>
     </div>
-
     <div id="exit-confirmation">
         <h3>Are you sure you want to exit?</h3>
         <div id="exit-confirmation-buttons">
@@ -2434,18 +2435,14 @@
             <button onclick="hideExitConfirmation()">No</button>
         </div>
     </div>
-
     <div id="lightning-effect"></div>
-
     <div id="transition-overlay">
         <div id="transition-text">BX2</div>
     </div>
     <div class="neon-light" id="neon-light">BarfbagX2</div>
-
     <div class="light-bulb-break" id="light-bulb-break"></div>
     <div class="flash" id="flash"></div>
     <script>
-
         const games = [
             { id: 'vril-craft', name: 'Vril Craft', url: 'https://example.com/vril-craft', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=V' },
             { id: 'movies', name: 'Movies', url: 'https://example.com/movies', icon: 'https://via.placeholder.com/48/0078d7/ffffff?text=M' },
@@ -2549,7 +2546,8 @@
             { id: 'awesometanks2', name: 'Awesome Tanks 2', url: 'https://149004934-bit.github.io/barfbagx2sawesometanks2.github.io/', icon: 'https://149004934-bit.github.io/barfbagx2sawesometanks2.github.io/favicon.ico' },
             { id: 'prismclient', name: 'Prism Client', url: 'https://149004934-bit.github.io/barfbagx2sprismclient.github.io/', icon: 'https://149004934-bit.github.io/barfbagx2sprismclient.github.io/favicon.ico' },
             { id: '99nightsintheforest', name: '99 Nights in the Forest', url: 'https://149004934-bit.github.io/barfbagx2s99nightsintheforest.github.io/', icon: 'https://149004934-bit.github.io/barfbagx2s99nightsintheforest.github.io/favicon.ico' },
-            { id: 'peggle', name: 'Peggle', url: 'https://barfbagx2.github.io/barfbagx2speggle.github.io/', icon: 'https://barfbagx2.github.io/barfbagx2speggle.github.io/favicon.ico' }
+            { id: 'peggle', name: 'Peggle', url: 'https://barfbagx2.github.io/barfbagx2speggle.github.io/', icon: 'https://barfbagx2.github.io/barfbagx2speggle.github.io/favicon.ico' },
+            { id: 'bedwars', name: 'Bedwars', url: 'https://barfbagx2.github.io/barfbagx2sbedwars.github.io/', icon: 'https://barfbagx2.github.io/barfbagx2speggle.github.io/favicon.ico' }
         ];
         // Minecraft-style loading phrases
         const minecraftPhrases = [
@@ -3261,6 +3259,7 @@
             windowHeader.innerHTML = `
                 <span class="window-title">${game.name}</span>
                 <div class="window-controls">
+                    <button class="new-tab-button" onclick="openGameInNewTab('${game.url}')">Open in New Tab</button>
                     <div class="window-control window-control-refresh">↻</div>
                     <div class="window-control window-control-minimize">-</div>
                     <div class="window-control window-control-maximize">+</div>
@@ -3327,6 +3326,10 @@
             const score = Math.floor(Math.random() * 1000) + 1;
             const isWin = Math.random() > 0.5;
             updateGameStats(game.id, score, isWin);
+        }
+        // Open game in a new tab
+        function openGameInNewTab(url) {
+            window.open(url, '_blank');
         }
         // Refresh game iframe
         function refreshGame(windowId) {
